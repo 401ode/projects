@@ -1,9 +1,11 @@
 import os
 import dj_database_url
+from secrets.secrets import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'ys)^5j2-(g^-y60v!og8+-%nqo(kske*lwrv^14dzu1kqi(#7+'
+# Original 18F non-prod secret key: 
+# SECRET_KEY = 'ys)^5j2-(g^-y60v!og8+-%nqo(kske*lwrv^14dzu1kqi(#7+'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
@@ -98,6 +100,6 @@ LOGGING = {
     },
 }
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_BUCKET = os.environ.get('AWS_BUCKET')
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_BUCKET = os.environ.get('AWS_BUCKET')
