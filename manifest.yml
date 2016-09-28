@@ -8,4 +8,4 @@ applications:
   stack: cflinuxfs2
   buildpack: https://github.com/cloudfoundry/python-buildpack
   services:
-    - ri-etss-projects
+    - rhode-island-projects-db
