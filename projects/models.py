@@ -15,7 +15,7 @@ class ModelBase(models.Model):
 
 class Client(models.Model):
     department = models.CharField(
-        help_text='Deparment is the highest organizational level.',
+        help_text='Department is the highest organizational level.',
         max_length=255,
         blank=True
     )
@@ -25,27 +25,30 @@ class Client(models.Model):
         blank=True
     )
     omb_agency_code = models.CharField(
-        help_text='OMB Agency Code is the top level code.',
+        help_text='OMB Agency Code is the code id for the agency described here.',
         max_length=255,
         blank=True,
         verbose_name='OMB Agency Code'
     )
-    omb_bureau_code = models.CharField(
-        help_text='OMB Bureau Code is the level below OMB Agency Code.',
-        max_length=255,
-        blank=True,
-        verbose_name='OMB Bureau Code'
-    )
-    treasury_agency_code = models.CharField(
-        max_length=255,
-        blank=True,
-        verbose_name='Treasury Agency Code'
-    )
-    cgac_agency_code = models.CharField(
-        max_length=255,
-        blank=True,
-        verbose_name='CGAC Agency Code'
-    )
+    
+    # The following data are not necessary for State usage.
+    # omb_bureau_code = models.CharField(
+    #     help_text='OMB Bureau Code is the level below OMB Agency Code.',
+    #     max_length=255,
+    #     blank=True,
+    #     verbose_name='OMB Bureau Code'
+    # )
+    # treasury_agency_code = models.CharField(
+    #     max_length=255,
+    #     blank=True,
+    #     verbose_name='Treasury Agency Code'
+    # )
+    # 
+    # cgac_agency_code = models.CharField(
+    #     max_length=255,
+    #     blank=True,
+    #     verbose_name='CGAC Agency Code'
+    # )
 
     class Meta:
         ordering = ['department', 'agency']
@@ -60,6 +63,11 @@ class BusinessUnit(models.Model):
     def __str__(self):
         return self.name
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
 
 class ProjectManager(models.Manager):
     def search(self, terms):
@@ -80,11 +88,11 @@ class ProjectManager(models.Manager):
 class Project(ModelBase):
     name = models.CharField(
         max_length=100,
-        help_text='The full name of the project (e.g., "Agile BPA")'
+        help_text='The full name of the project (e.g., "UHIP")'
     )
-    slug = models.CharField(
+    slug = models.SlugField(
         max_length=100,
-        help_text='The slug of the project (e.g., "agile-bpa")',
+        help_text='The slug of the project (e.g., "uhip")',
         blank=True
     )
     tagline = models.CharField(
@@ -99,7 +107,7 @@ class Project(ModelBase):
         null=True
     )
     project_lead = models.CharField(
-        help_text='Name of 18F employee who is responsible for this'
+        help_text='Name of ETSS/ODE employee who is responsible for this'
         ' project.',
         max_length=255,
         verbose_name='Project Lead',
@@ -112,6 +120,48 @@ class Project(ModelBase):
         help_text='The impact of the project. Markdown is allowed.',
         blank=True
     )
+    status = models.IntegerField(
+        help_text='Current status of the project.',
+        choices=[
+            (0, 'Tentative'), (1, 'Active'), (2, 'Paused'), (3, 'Complete')
+        ],
+        default=1
+    )
+    priority = models.IntegerField(
+        help_text='Official designated priority of the project.',
+        choices=[
+            (0, 'Designated Strategic Imperative'), (1, 'Critical'), (2, 'High'), (3, 'Medium'), (4, 'Low')
+        ],
+        default=3
+    )
+    # Level of Effort Section 
+    tech_effort = models.IntegerField(
+        help_text = "Estimate of technical staff necessary for the project.",
+        verbose_name = "Tech Staff Level of Effort"
+    )
+    agency_effort = models.IntegerField(
+        help_text = "Estimate of Agency staff necessary for the project.",
+        verbose_name = "Agency Staff Level of Effort"
+    )
+    contractor_effort = models.IntegerField(
+        help_text = "Estimate of contractor staff necessary for the project.",
+        verbose_name = "Contractor Staff Level of Effort"
+    )
+    # End Level of Effort Section
+    # Timeline Section
+    start_date = models.DateField(
+        help_text = "The estimated or actual project start date.",
+        verbose_name = "Project Start Date"
+    )
+    go_live_date = models.DateField(
+        help_text = "The estimated or actual project go-live date.",
+        verbose_name = "Project Go-Live Date"
+    )
+    # End Timeline Section
+    blockers = models.TextField(
+        help_text='What stands in the way of this project? Markdown is allowed.',
+        blank=True
+    )
     live_site_url = models.URLField(
         help_text='A URL to the site where the project is deployed, '
                   'if one exists.',
@@ -120,20 +170,14 @@ class Project(ModelBase):
     )
     github_url = models.URLField(
         help_text='The GitHub URL of the project, e.g. '
-                  'https://github.com/18f/agile-bpa',
+                  'https://github.com/401ode/analytics-reporter',
         blank=True,
         verbose_name='GitHub URL'
     )
-    status = models.IntegerField(
-        help_text='Current status of the project.',
-        choices=[
-            (0, 'Tentative'), (1, 'Active'), (2, 'Paused'), (3, 'Complete')
-        ],
-        default=1
-    )
+    
     is_billable = models.BooleanField(
         help_text='Whether or not the project is chargeable to a'
-        ' non-18F client.',
+        ' non-ODE/ETSS client.',
         default=False
     )
     cloud_dot_gov = models.BooleanField(
@@ -142,17 +186,9 @@ class Project(ModelBase):
         default=False,
         verbose_name='Cloud.gov Project'
     )
-    tock_id = models.IntegerField(
-        help_text='The ID of the project in Tock.',
-        blank=True,
-        null=True,
-        unique=True,
-        verbose_name='Tock ID'
-    )
-    mb_number = models.CharField(
-        help_text='The unique identifier for an agreement in'
-        'the GSA financial system. This is different than'
-        'the Tock ID.',
+    rifans_number = models.CharField(
+        help_text='The unique identifier for the project in'
+        'the RIFANS financial system.',
         max_length=100,
         blank=True,
         verbose_name='MB Number'
@@ -165,6 +201,10 @@ class Project(ModelBase):
         null=True,
         verbose_name='Business Unit'
     )
+    categories = models.ManyToManyField(
+        Category,
+        help_text = "Which categories does this project fall into?"
+    )
     is_visible = models.BooleanField(
         help_text='Projects with a primary private repos should'
         'be listed as false. All other projects should be '
@@ -176,7 +216,7 @@ class Project(ModelBase):
     objects = ProjectManager()
 
     class Meta:
-        ordering = ['name']
+        ordering = ['priority','department','agency','name']
 
     def __str__(self):
         return self.name

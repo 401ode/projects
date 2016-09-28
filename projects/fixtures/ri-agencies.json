@@ -1,0 +1,1929 @@
+[{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Transparency Portal, State of Rhode Island"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Administration, Department of"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Department Of Children Youth And Families",
+        "omb_agency_code" : 9
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"Adult and Career and Technical Education [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"Adult Basic Education and GED [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Adult Criminal Information Database"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Training & Development Catalog [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 70,
+    "fields" : {
+        "department" : "Department Of Transportation",
+        "omb_agency_code": 70,
+        "agency":"Traffic Updates (5-1-1) [DOT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Traffic Tribunal [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Agriculture Division [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 70,
+    "fields" : {
+        "department" : "Department Of Transportation",
+        "omb_agency_code": 70,
+        "agency":"Traffic Bulletin Update [DOT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Unemployment Insurance [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Temporary Disability Insurance [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"Teacher Certification [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Taxypayers Rights [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Taxation Division [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Tax Forms, Rhode Island State [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Apprenticeship [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Attorney General           Attorney General"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Governor           Auditor General"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Audits, Bureau of"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Talking Books Plus Online Catalog [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Auto inspections"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Automobile Registration"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Banking Division [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Talking Books Plus [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"YouthWORKS"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Beaches Monitoring [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Benefits, Office of Employee"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Bingo (Charitable Gaming Unit, State Police)"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"T.D.I. [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Supreme Court [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Blind and Physically Handicapped, RI Regional Library for the [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Superior Court [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Summer Reading Program [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Board of Examination and Registration of Architects [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Board of Medical Licensure & Discipline [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"Board of Regents for Elementary and Secondary Educ [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Workforce Investment Office [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Statewide Planning Program [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Brownfields Reinvestment [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Budget Office [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Building Code Commission [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Bureau of Audits [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Business Services [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"State Sheriffs Department [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Cancer Control Registry, RI [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Car Registration [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Career Resource Network [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Census Data, Rhode Island [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "State Publications Clearinghouse [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"State Properties Committee [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Workers' Compensation Fraud and Compliance Unit [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Central Mail Facilities [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"State Police Recruit Training Academy"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Centro de Informacion de Votante en Rhode Island [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"State Police"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"Certification, Teacher [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Charitable gaming (State Police)"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Workers' Compensation Division [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"State Mail Services [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Child Support Services [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Childrens Code Commission [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"City & Town Officials, Directory of [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Civil Service Examinations, RI [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Coastal Resources, Division of [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "State Library and State Publications Clearinghouse [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "State Law Library [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Commercial License and Regulation [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Commission on Race and Police-Community Relations [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Commission on the Deaf and Hard of Hearing [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Commission on Women [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"State Jobs Application System [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Workers Compensation Court [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"State Jobs [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"State Job Opportunities [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "General Treasurer",
+        "agency" : "State Investment Commission [TREAS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Contractor License Search [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Contractors' Registration Board [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Controller's Office [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Council on the Arts, RI State"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Court Appointed Special Advocate (CASA) [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"State Fire Marshal's Office [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "CourtConnect, ACS [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"State Energy Office [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "General Treasurer",
+        "agency" : "Crime Victim Compensation Fund [TREAS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Criminal Information Database, Adult [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Department Of Children Youth And Families",
+        "omb_agency_code": 9,
+        "agency": " Day Care Licensing and Regulation [DCYF]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Death Certificates"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"State civil service jobs and examinations [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"State beaches [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "State Archives [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Uniform Commercial Code [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Disciplinary Board [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Small Claims Court [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "District Court [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Diversity, Office of Human Resources, Outreach and [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Doc Finder [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Sign Language Interpreter Referrral Service [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Domestic Violence Training and Monitoring Unit [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Donley Rehabilitation Center [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Drinking Water Quality, Office of [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Sheriffs Department, State [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Driver's Manual [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Drivers Licenses and IDs [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Separation of Powers Training [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Securities Regulation Division [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Water Resources, Office of [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Elections & Voting [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Uniform Crime Reports (State Police)"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Employee Benefits, Office of [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Employer Service Unit [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Employer Tax Section, Division of Taxation [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Employment and Training Services [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"EmployRI - netWORKri Online [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Rules and Regulations, Rhode Island State [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Energy Resources, Office of [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Engineers, State Board of Registration for Professional [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Environmental Health, Division of [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Environmental Management, Department of"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Environmental Protection, Bureau of [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Union Contracts [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Family Court [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Family Planning, Division of Health [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Rivers Council [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"RIPAY [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 70,
+    "fields" : {
+        "department" : "Department Of Transportation",
+        "omb_agency_code": 70,
+        "agency":"Rhodeways Traveler Information [DOT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Water Quality, Office of Drinking [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Financial Accounting Network Systems, Rhode Island [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Find Your Officials [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Fire Districts and Charters Index [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Fire Marshal's Office, State [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "First Stop Business Information Center [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Fiscal Fitness Initiative [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Fish and Wildlife, Division of [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Fishing Licenses [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Flu Information [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Food Protection Inspection Reports [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Forest Environment, Division of [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Fort Adams State Park [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Department Of Children Youth And Families",
+        "omb_agency_code": 9,
+        "agency":"9,",
+        "agency": " Foster Care [DCYF]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Renewable Energy Fund, Rhode Island [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"G.E.D. [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Gaming, Charitable (State Police)"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Rehabilitation Building and Fire Code [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Geographic Information System, Rhode Island [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Waste Management, Office of [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Regulations, State Rules and [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Registry of Motor Vehicles [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Regional Library for the Blind and Physically Handicapped [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Recruitment Listings, State of RI [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Raffles (Charitable Gaming Unit, State Police)"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Racing and Athletics and Commercial Licensing Division [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Greenways Council [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Groundwater/WellheadProtection [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Race and Police-Community Relations, Commission on"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"H.R.O.D. [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Health and Equity, Division of Community [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Health Services Regulation, Division of [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"R.I.P.A.Y [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"High School Equivalency Diploma Program [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Historical Records Advisory Board [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Housing Resources Commission [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Human Resources Division [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Human Resources, Outreach and Diversity (HROD) [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Hunting licenses [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"R.F.P [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Incorporations, New [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Purchases, Division of [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Information Technology, Division of [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 72,
+    "fields" : {
+        "department" : "Department Of Elementary And Secondary Education",
+        "omb_agency_code": 72,
+        "agency":"Information Works [DOE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Insurance Regulation Division [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Insurance, Temporary Disability [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Public Records Requests [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Public Records Administration [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Properties Committee, State [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Professional Regulation, Division of [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Jobs, State [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Professional Land Surveyors, State Board of Registration for [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Judicial Records Center [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Rhode Island Judiciary",
+        "agency": "Judicial Tenure and Discipline, Commission on [COURTS]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Justice Commission, Rhode Island, PSGAO Office [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Department Of Children Youth And Families",
+        "omb_agency_code": 9,
+        "agency": "Juvenile Correctional Services [DCYF]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Police-Community Relations, Commission on Race and [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Kidsnet [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"KIDSNET [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Know Rhode Island [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Labor Market Information [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Accounts and Control [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Labor Relations Center, DOA [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Land Surveyors, Professional [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Landscape Architects, Board of Examiners of [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Lead Poisoning Prevention Program, RI Childhood [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 81,
+    "fields" : {
+        "department" : "Department Of Public Safety",
+        "omb_agency_code": 81,
+        "agency":"Police, State"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Library & Information Services [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Library for the Blind and Physically Handicapped, RI [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"License Plates [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Licensee Lookup [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Plates, Vanity [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Planning, Division of [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Planning Program, Statewide [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 71,
+    "fields" : {
+        "department" : "Department Of Business Regulation",
+        "omb_agency_code": 71,
+        "agency":"Liquor/Enforcement and Compliance [DBR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Voter Information Center [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Lobbyist database [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Mail Services, State [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Maps, RI [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Marine Fisheries [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Marriage certificates [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Master Price Agreements [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Medical Licensure and Discipline, Board of [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Personnel (Division of Human Resources) [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Payment Information, State of Rhode Island [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Parks and Recreation Division [DEM]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 75,
+    "fields" : {
+        "department" : "Department Of Health",
+        "omb_agency_code": 75,
+        "agency":"Paginas de HEALTHri en Espanol [DOH]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 68,
+    "fields" : {
+        "department" : "Department Of Administration",
+        "omb_agency_code": 68,
+        "agency":"Minority Business Enterprise [ADMIN]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Operator Control, Division of Motor Vehicles (contact information) [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Motor Vehicles, Division of [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 80,
+    "fields" : {
+        "department" : "Department Of Revenue",
+        "omb_agency_code": 80,
+        "agency":"Municipal Finance (formerly Municipal Affairs) [DOR]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"Occupations, Rhode Island Licensed [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Notary Public Guide, Rhode Island [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "fields" : {
+        "department" : "Secretary of State",
+        "agency": "Notary Public [STATE]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 73,
+    "fields" : {
+        "department" : "Department Of Labor And Training",
+        "omb_agency_code": 73,
+        "agency":"New Hire Reporting Directory [DLT]"
+    }
+},
+{
+    "model":"projects.Client",
+    "pk": 74,
+    "fields" : {
+        "department" : "Department Of Environmental Management",
+        "omb_agency_code": 74,
+        "agency":"Natural Resources, Bureau of [DEM]"
+    }
+}]
