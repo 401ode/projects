@@ -54,7 +54,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres:///18fprojects')
+    'default': dj_database_url.config(default='postgres:///etssprojects')
 }
 
 # Internationalization
