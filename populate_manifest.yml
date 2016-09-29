@@ -1,0 +1,13 @@
+applications:
+- disk_quota: 512M
+  # domain: apps.cloud.gov
+  # host: rhode-island-projects
+  # instances: 1
+  memory: 512M
+  name: rhode-island-projects-populate
+  no-route: true
+  stack: cflinuxfs2
+  command: (python manage.py loaddata projects/fixtures/*.json && echo SUCCESS || echo FAIL) && sleep infinity
+  buildpack: https://github.com/cloudfoundry/python-buildpack
+  services:
+    - rhode-island-projects-db

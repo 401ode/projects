@@ -1,11 +1,11 @@
 import os
 import dj_database_url
-from secrets.secrets import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Original 18F non-prod secret key: 
 # SECRET_KEY = 'ys)^5j2-(g^-y60v!og8+-%nqo(kske*lwrv^14dzu1kqi(#7+'
+SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 

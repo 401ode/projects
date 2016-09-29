@@ -216,7 +216,7 @@ class Project(ModelBase):
     objects = ProjectManager()
 
     class Meta:
-        ordering = ['priority','department','agency','name']
+        ordering = ['priority','client','name']
 
     def __str__(self):
         return self.name

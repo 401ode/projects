@@ -1,0 +1,13 @@
+applications:
+- buildpack: https://github.com/cloudfoundry/python-buildpack
+  command: curl https://18f-tmate-bootstrap.s3.amazonaws.com/tmate-debug-init.sh |
+    sh
+  disk_quota: 512M
+  host: rhode-island-projects
+  instances: 1
+  memory: 512M
+  name: rhode-island-projects-ssh
+  no-route: true
+  services:
+  - rhode-island-projects-db
+  stack: cflinuxfs2
