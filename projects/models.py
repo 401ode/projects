@@ -198,7 +198,9 @@ class Project(ModelBase):
         'the RIFANS financial system.',
         max_length=100,
         blank=True,
-        verbose_name='MB Number'
+        null=True,
+        # unique=True,
+        verbose_name='RIFANS Account Number'
     )
     business_unit = models.ForeignKey(
         BusinessUnit,
