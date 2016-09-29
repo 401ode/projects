@@ -38,18 +38,11 @@ $ python manage.py loaddata projects/fixtures/*.json
 We recommend the excellent [jsonlint](https://github.com/zaach/jsonlint) from [Zach Carter](https://github.com/zaach) to validate your `.json` files before loading them into postgresql.
 
 
-Sample project data may also be imported from a CSV file. If you are in 18F, export the first sheet of [this Google spreadsheet](https://docs.google.com/spreadsheets/d/1tCGfeLIzcRwyXXrNkxljRp0TTTQcxzojhFsNooe0UOs/edit#gid=0) as a CSV, then run the following command:
+Sample project data may also be imported from a CSV file. Importation template forthcoming. See [Issue #10](https://github.com/401ode/projects/issues/10)
+
 
 ```sh
 $ python manage.py import_projects filename.csv
-```
-
-To load data from our S3 bucket, the following env vars are needed:
-
-```
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-AWS_BUCKET
 ```
 
 #### Using Docker (optional)
