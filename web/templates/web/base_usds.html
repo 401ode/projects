@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rhode Island Office of Digital Excellence{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/build/uswds.min.css">
+</head>
+<body>
+  <div class="usa-grid">
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+  <header class="usa-header" role="banner">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <button class="usa-menu-btn">Menu</button>
+        <div class="usa-logo" id="logo">
+          <em class="usa-logo-text">
+            <a href="/" accesskey="1" title="Home" aria-label="Home">
+              <img src="/static/img/logo.png" class="align-middle" width="200">
+              <span class="bold gray">/projects</span>
+              </a>
+          </em>
+        </div>
+      </div>
+      <nav role="navigation" class="usa-nav">
+        <form class="usa-search usa-search-small">
+          <div role="search">
+            <label class="usa-sr-only" for="search-field-small">Search small</label>
+            <input id="search-field-small" type="search" name="q" placeholder="Search" value="{{ query }}">
+            <button type="submit">
+              <span class="usa-sr-only">Search</span>
+            </button>
+          </div>
+        </form>
+      </nav>
+    </div>
+  </header>
+  <div class="usa-overlay">
+  <main id="main-content">
+    <div class="usa-alert usa-alert-warning">
+      <div class="usa-alert-body">
+        <h3 class="usa-alert-heading">Alpha - Work in Progress</h3>
+        <p class="usa-alert-text">ODE is actively working on this site. Please excuse us as we continue to improve it.</p>
+      </div>
+    </div>
+    {% block content %}{% endblock %}
+    </main>
+    </div>
+  </div>
+  
+      
+  <script src="/static/js/uswds.min.js"></script>
+</body>
+</html>

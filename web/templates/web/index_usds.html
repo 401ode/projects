@@ -1,0 +1,32 @@
+{% extends 'web/base_usds.html' %}
+
+{% block title %} - Projects Dashboard {% endblock title %}
+
+{% block content %}
+<h1>Projects - Proposed and Active</h1>
+<div class="usa-grid">
+{% for p in projects %}
+  <div class="usa-grid">
+    <div class="usa-width-one-fourth">
+      <h4><a href="{% url 'web:project' p.pk %}">
+        <span class="right"><i class="icon ion-help-circled"></i></span>
+        {{ p.name }}
+      </a></h4>
+        <p>{{ p.tagline }}</p>
+      {% if p.client %}
+      
+      <p>Developed with <span class="bold underline">{{ p.client.agency }}</span></p>
+      {% endif %}
+      <h3>
+        {% if p.live_site_url %}
+        <a href="{{ p.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
+        {% endif %}
+        {% if p.github_url %}
+        <a target="_blank" href="{{ p.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
+        {% endif %}
+      </h3>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
