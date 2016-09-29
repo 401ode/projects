@@ -1,4 +1,5 @@
-### 18F Projects
+[![Build Status](https://travis-ci.org/401ode/projects.svg?branch=master)](https://travis-ci.org/401ode/projects)
+### ODE Projects Dashboard
 
 We have hundreds of repos and have released dozens of tools but they're hard to find unless you know where to look (or what you're looking for.)
 
@@ -18,18 +19,24 @@ $ virtualenv -p python3.5 venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 
-$ createdb 18fprojects
+$ createdb etssprojects
 
 $ python manage.py migrate
 $ python manage.py runserver
 ```
 
-Fixtures containing all possible federal clients and 18F business units are included.
-To load:
+Fixtures containing possible State clients are included in: `projects/fixtures/ri-agencies.json`.
+
+Project categories are included in: `projects/fixtures/categories.json`. 
+
+To load them: 
 
 ```sh
 $ python manage.py loaddata projects/fixtures/*.json
 ```
+
+We recommend the excellent [jsonlint](https://github.com/zaach/jsonlint) from [Zach Carter](https://github.com/zaach) to validate your `.json` files before loading them into postgresql.
+
 
 Sample project data may also be imported from a CSV file. If you are in 18F, export the first sheet of [this Google spreadsheet](https://docs.google.com/spreadsheets/d/1tCGfeLIzcRwyXXrNkxljRp0TTTQcxzojhFsNooe0UOs/edit#gid=0) as a CSV, then run the following command:
 

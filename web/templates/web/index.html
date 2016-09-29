@@ -1,8 +1,9 @@
 {% extends 'web/base.html' %}
 
+{% block title %} - Projects Dashboard {% endblock title %}
 
 {% block content %}
-<h1>Here are some cool things we helped build</h1>
+<h1>Projects - Proposed and Active</h1>
 <form class="py2">
   <label class="hide" for="search">Search</label>
   <input type="text" class="field" name="q" value="{{ query }}" placeholder="Search">

@@ -1,12 +1,12 @@
 import os
 import dj_database_url
-# from secrets.secrets import *
+from secrets.secrets import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Before deploying to production, uncomment this line and recomment line 3, 
 # (from secrets.secret import *):
-SECRET_KEY = os.getenv("SECRET_KEY")
+# SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
