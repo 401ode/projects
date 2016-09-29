@@ -6,7 +6,7 @@ applications:
   memory: 512M
   name: rhode-island-projects-migrate
   no-route: true
-  stack: cflinuxfs2
+  # stack: cflinuxfs2
   command: (python manage.py migrate && echo SUCCESS || echo FAIL) && sleep infinity
   buildpack: https://github.com/cloudfoundry/python-buildpack
   services:

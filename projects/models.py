@@ -137,25 +137,32 @@ class Project(ModelBase):
     # Level of Effort Section 
     tech_effort = models.IntegerField(
         help_text = "Estimate of technical staff necessary for the project.",
-        verbose_name = "Tech Staff Level of Effort"
+        verbose_name = "Tech Staff Level of Effort",
+        default=0
     )
     agency_effort = models.IntegerField(
         help_text = "Estimate of Agency staff necessary for the project.",
-        verbose_name = "Agency Staff Level of Effort"
+        verbose_name = "Agency Staff Level of Effort",
+        default=0
     )
     contractor_effort = models.IntegerField(
         help_text = "Estimate of contractor staff necessary for the project.",
-        verbose_name = "Contractor Staff Level of Effort"
+        verbose_name = "Contractor Staff Level of Effort",
+        default=0
     )
     # End Level of Effort Section
     # Timeline Section
     start_date = models.DateField(
         help_text = "The estimated or actual project start date.",
-        verbose_name = "Project Start Date"
+        verbose_name = "Project Start Date",
+        blank=True,
+        null=True
     )
     go_live_date = models.DateField(
         help_text = "The estimated or actual project go-live date.",
-        verbose_name = "Project Go-Live Date"
+        verbose_name = "Project Go-Live Date",
+        blank=True,
+        null=True
     )
     # End Timeline Section
     blockers = models.TextField(
