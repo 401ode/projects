@@ -195,7 +195,7 @@ button, input, select, textarea {
 
 img { max-width: 100% }
 svg { max-height: 100% }
-/* @import 'basscss-base-forms'; */
+
 /* Basscss Base Buttons */
 
 button,
@@ -231,7 +231,7 @@ button:before,
 }
 
 .button:hover { text-decoration: none }
-/* @import 'basscss-base-tables'; */
+
 /* Basscss Base Typography */
 
 body {
@@ -488,7 +488,7 @@ hr {
   opacity: .5;
 }
 /* Extend base styles for form defaults */
-/* @import 'basscss-color-forms'; */
+
 /* Basscss Color Borders */
 
 .border {

@@ -10,3 +10,4 @@ __pycache__/
 secrets
 venv
 node_modules
+static/src
