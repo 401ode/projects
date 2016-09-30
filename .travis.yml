@@ -8,5 +8,5 @@ env:
 install:
   - pip install -r requirements.txt
 script:
-  - pylint --rcfile=.pylintrc
+  # - pylint --rcfile=.pylintrc
   - python manage.py test --nomigrations
