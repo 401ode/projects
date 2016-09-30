@@ -3,13 +3,12 @@
 {% block title %} - Projects Dashboard {% endblock title %}
 
 {% block content %}
-<h1>Projects - Proposed and Active</h1>
+<h2 class="usa-heading">Projects - Proposed and Active</h2>
 <div class="usa-grid">
 {% for p in projects %}
-  <div class="usa-grid">
-    <div class="usa-width-one-fourth">
+    <div class="usa-width-one-third usa-background-dark">
       <h4><a href="{% url 'web:project' p.pk %}">
-        <span class="right"><i class="icon ion-help-circled"></i></span>
+        <i class="icon ion-help-circled"></i>
         {{ p.name }}
       </a></h4>
         <p>{{ p.tagline }}</p>
@@ -24,9 +23,13 @@
         {% if p.github_url %}
         <a target="_blank" href="{{ p.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
         {% endif %}
+        
       </h3>
+
     </div>
-  </div>
+
 {% endfor %}
+
 </div>
-{% endblock %}
+
+{% endblock content %}

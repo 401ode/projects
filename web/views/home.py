@@ -8,7 +8,7 @@ class HomeView(ListView):
     model = Project
     ordering = 'name'
     paginate_by = 100
-    template_name = 'web/index_usds.html'
+    template_name = 'web/index.html'
     sort_fields = ['name', 'created', '-created']
 
     def get_queryset(self):

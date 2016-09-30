@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Client, Project, BusinessUnit
+from .models import Client, Project, BusinessUnit, Category
 from .forms import ProjectForm
 
 
