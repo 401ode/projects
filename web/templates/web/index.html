@@ -9,13 +9,17 @@
   <input type="text" class="field" name="q" value="{{ query }}" placeholder="Search">
   <button class="btn btn-outline bg-white">Search</button>
 </form>
-<div class="flex flex-wrap mxn2">
+<div class="flex flex-wrap mxn2 row">
 {% for p in projects %}
-  <div class="column-4 border-box p2">
+  <div class="column-4 border-box p2" style="height:253px">
     <div class="p2 bg-white border rounded">
       <a class="h4 caps bold mb1 block black" href="{% url 'web:project' p.pk %}">
         <span class="right"><i class="icon ion-help-circled blue"></i></span>
-        {{ p.name }}
+        {% if p.name|length > 30 %}
+          {{ p.name|slice:":35" }}...
+        {% else %}
+          {{ p.name }}
+        {% endif %} 
       </a>
       <div class="mb2">
         {{ p.tagline }}

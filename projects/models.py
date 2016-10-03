@@ -54,7 +54,7 @@ class Client(models.Model):
         ordering = ['department', 'agency']
 
     def __str__(self):
-        return '%s - %s' % (self.department, self.agency)
+        return '{} - {}'.format(self.department, self.agency)
 
 
 class BusinessUnit(models.Model):
