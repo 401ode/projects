@@ -3,42 +3,40 @@
 {% block title %} - Projects Dashboard {% endblock title %}
 
 {% block content %}
-<h1>Projects - Proposed and Active</h1>
-<form class="py2">
-  <label class="hide" for="search">Search</label>
-  <input type="text" class="field" name="q" value="{{ query }}" placeholder="Search">
-  <button class="btn btn-outline bg-white">Search</button>
-</form>
-<div class="flex flex-wrap mxn2 row">
-{% for p in projects %}
-  <div class="column-4 border-box p2" style="height:253px">
-    <div class="p2 bg-white border rounded">
-      <a class="h4 caps bold mb1 block black" href="{% url 'web:project' p.pk %}">
-        <span class="right"><i class="icon ion-help-circled blue"></i></span>
-        {% if p.name|length > 30 %}
-          {{ p.name|slice:":35" }}...
-        {% else %}
-          {{ p.name }}
-        {% endif %} 
-      </a>
-      <div class="mb2">
-        {{ p.tagline }}
-      </div>
-      {% if p.client %}
-      <div class="h6 mb2">
-        Developed with <span class="bold underline">{{ p.client }}</span>
-      </div>
-      {% endif %}
-      <div class="h3">
-      {% if p.live_site_url %}
-          <a target="_blank" href="{{ p.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
-      {% endif %}
-      {% if p.github_url %}
-          <a target="_blank" href="{{ p.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
-      {% endif %}
+<div class="inline-block">
+  <h1>Projects - Proposed and Active</h1>
+</div>
+
+  <div class="flex flex-wrap mxn2 row">
+  {% for p in projects %}
+    <div class="column-4 border-box p2" style="height:253px">
+      <div class="p2 bg-white border rounded">
+        <a class="h4 caps bold mb1 block black" href="{% url 'web:project' p.pk %}">
+          <span class="right"><i class="icon ion-help-circled blue"></i></span>
+          {% if p.name|length > 30 %}
+            {{ p.name|slice:":35" }}...
+          {% else %}
+            {{ p.name }}
+          {% endif %} 
+        </a>
+        <div class="mb2">
+          {{ p.tagline }}
+        </div>
+        {% if p.client %}
+        <div class="h6 mb2">
+          Developed with <span class="bold underline">{{ p.client }}</span>
+        </div>
+        {% endif %}
+        <div class="h3">
+        {% if p.live_site_url %}
+            <a target="_blank" href="{{ p.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
+        {% endif %}
+        {% if p.github_url %}
+            <a target="_blank" href="{{ p.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
+        {% endif %}
+        </div>
       </div>
     </div>
-  </div>
 {% endfor %}
 </div>
 {% endblock %}

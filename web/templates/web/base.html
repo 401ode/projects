@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <title>Rhode Island Office of Digital Excellence{% block title %}{% endblock %}</title>
@@ -10,15 +10,24 @@
   <link href="/static/css/skull.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="h6 p1 bg-navy white center caps">Work in Progress</div>
+  <div class="h6 p1 bg-navy white center caps bold">Work in Progress</div>
   <div class="container px2 py3">
-    <div class="flex items-start mb4">
+    <header>
+    <div class="column-8 mb4">
       <a href="/" class="p0 btn" title="Click to go to Project Index.">
         <img src="/static/img/logo.png" title="ODE Logo" width="250"></a>
-        <a href="/"><h1 class="bold black inline-block self-start">/projects</h1></a>
-      
+        <a href="/" title="Click to go to Project Index."><h1 class="bold black inline-block self-start">/projects</h1></a>
     </div>
-    {% block content %}{% endblock %}
+    <div class="column-4 mb4">
+      <form class="right">
+        <label class="hide" for="q">Search</label>
+        <input type="text" id="q" name="q" value="{{ query }}" placeholder="Search for Projects">
+        <button class="button h6 caps border bg-navy">Search</button>
+      </form>
+    </div>
+    </header>
+    {% block content %}
+    {% endblock %}
   </div>
 </body>
 </html>
