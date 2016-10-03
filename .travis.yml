@@ -9,7 +9,6 @@ install:
   - pip install -r requirements.txt
 before_script:
   - npm i -g http-server phantomjs pa11y pa11y-reporter-ci
-
 script:
   # - pylint --rcfile=.pylintrc
   - nohup http-server -p 8080 >/dev/null 2>&1 &
