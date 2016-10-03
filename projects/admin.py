@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Client, Project, BusinessUnit, Category
 from .forms import ProjectForm, CategoryForm
 
+admin.site.site_header = 'Project Dashboard Administration'
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
