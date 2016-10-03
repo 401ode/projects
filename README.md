@@ -11,6 +11,8 @@ This is an ongoing **work in progress!!!** Our [Wiki](https://github.com/18F/pro
 
 - Python 3.5.0
 - [Postgresql](http://www.postgresql.org/download/)
+- [Basscss (kinda)](http://www.basscss.com/)
+- [Skull (Basscss Theme)](http://www.basscss.com/skull/)
 
 #### Running Locally
 
