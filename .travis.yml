@@ -12,6 +12,6 @@ before_script:
 script:
   # - pylint --rcfile=.pylintrc
   # - nohup http-server -p 8080 >/dev/null 2>&1 &
-  - nohup python manage.py runserver >/dev/null 2>&1 &
-  - pa11y localhost -r ci -s WCAG2AAA
+  # - nohup python manage.py runserver >/dev/null 2>&1 &
+  # - pa11y localhost -r ci -s WCAG2AAA
   - python manage.py test --nomigrations

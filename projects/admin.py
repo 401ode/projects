@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Client, Project, BusinessUnit
-from .forms import ProjectForm
+from .models import Client, Project, BusinessUnit, Category
+from .forms import ProjectForm, CategoryForm
 
 
 @admin.register(Client)
@@ -23,3 +23,9 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ('status', 'is_billable', 'cloud_dot_gov', 'is_visible')
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    form = CategoryForm
+    # Only one field. Do we need a list_display or filter?
+    # list_display = ('name')

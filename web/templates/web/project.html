@@ -5,8 +5,8 @@
 {% block content %}
 <div class="clearfix mt0">
         <section id="header-information" class="left mt0 px2 py4">
-            <h1 class="inline block">{{ project.name }}</h1>
-            <div class="h3">
+            <h1 id="project-name" class="inline block">{{ project.name }}</h1>
+            <div id="live-github-urls" class="h3">
                   {% if project.live_site_url %}
                       <a target="_blank" href="{{ project.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
                   {% endif %}
@@ -18,7 +18,7 @@
             <h3> Developed in partnership with <span class="bold underline">{{ project.client }}</span>.
             </h3>
             {% endif %}
-            <div class="h3">{{ project.tagline }}</div>
+            <div id="tagline" class="h3">{{ project.tagline }}</div>
         </section>
         
         <section id="overview-data" class="container px2 py4 overflow-hidden">

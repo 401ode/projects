@@ -59,12 +59,17 @@ class Client(models.Model):
 
 class BusinessUnit(models.Model):
     name = models.CharField(max_length=100)
-
+    class Meta: 
+        verbose_name_plural = "Business Units"
+    
     def __str__(self):
         return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    
+    class Meta: 
+        verbose_name_plural = "Categories"
     
     def __str__(self):
         return self.name

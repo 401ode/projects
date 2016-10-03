@@ -1,54 +1,93 @@
-[{
-    "model":"projects.Category",
-    "fields":{
-        "name":"Software"
+[
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Software"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Hardware Buy/Replace"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Hardware Buy/Replace"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Service/Support"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Service/Support"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Project Management"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Project Management"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Case Management"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Case Management"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Capital/Infrastructure"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Capital/Infrastructure"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Paper Process Replacement"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Paper Process Replacement"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Increased Staff Productivity"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Increased Staff Productivity"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Potential Collaboration"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Potential Collaboration"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Medical/Dental Equipment"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Medical/Dental Equipment"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Records Digitization"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Records Digitization"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Analysis"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Analysis"
+        }
     },
-    "model":"projects.Category",
-    "fields":{
-        "name":"Electronic Medical Records"
+    {
+        "pk": null,
+        "model": "projects.Category",
+        "fields": {
+            "name": "Electronic Medical Records"
+        }
     }
-}]
+]
