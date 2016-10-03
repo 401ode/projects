@@ -11,6 +11,7 @@ before_script:
   - npm i -g http-server phantomjs pa11y pa11y-reporter-ci
 script:
   # - pylint --rcfile=.pylintrc
-  - nohup http-server -p 8080 >/dev/null 2>&1 &
-  - pa11y localhost:8080 -r ci -s WCAG2AAA
+  # - nohup http-server -p 8080 >/dev/null 2>&1 &
+  - nohup python manage.py runserver >/dev/null 2>&1 &
+  - pa11y localhost -r ci -s WCAG2AAA
   - python manage.py test --nomigrations
