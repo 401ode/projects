@@ -6,13 +6,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
   <link href="/static/css/skull.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="h6 p1 bg-blue white center caps">Work in Progress</div>
+  <div class="h6 p1 bg-navy white center caps">Work in Progress</div>
   <div class="container px2 py3">
-    <div class="mb4">
-      <a href="/" class="h1 p0 btn"><img src="/static/img/logo.png" class="align-middle" width="250"><span class="bold black">/projects</span></a>
+    <div class="flex items-start mb4">
+      <a href="/" class="p0 btn" title="Click to go to Project Index.">
+        <img src="/static/img/logo.png" title="ODE Logo" width="250"></a>
+        <a href="/"><h1 class="bold black inline-block self-start">/projects</h1></a>
+      
     </div>
     {% block content %}{% endblock %}
   </div>
