@@ -12,13 +12,13 @@
 <body>
   <div class="h6 p1 bg-navy white center caps bold">Work in Progress</div>
   <div class="container px2 py3">
-    <header>
-    <div class="column-8 mb4">
-      <a href="/" class="p0 btn" title="Click to go to Project Index.">
-        <img src="/static/img/logo.png" title="ODE Logo" width="250"></a>
-        <a href="/" title="Click to go to Project Index."><h1 class="bold black inline-block self-start">/projects</h1></a>
+    <header class="clearfix row">
+    <div class="column-8 mb0">
+      <a href="/" class="p0 col" title="Click to go to Project Index.">
+        <img src="/static/img/logo.png" title="ODE Logo" width="250" alt="Click to go to Project Index."></a>
+        <a href="/" title="Click to go to Project Index." ><h1 class="bold black">/projects</h1></a>
     </div>
-    <div class="column-4 mb4">
+    <div class="column-4 mb0">
       <form class="right">
         <label class="hide" for="q">Search</label>
         <input type="text" id="q" name="q" value="{{ query }}" placeholder="Search for Projects">
@@ -28,7 +28,27 @@
     </header>
     {% block content %}
     {% endblock %}
+  <footer class="container px2 row center">
+    <div class="column-4 coa">
+      <p><a href="http://www.ri.gov"><img src="http://www.vets.ri.gov/assets/img/statecoabw-footer.png" title="RI Logo" alt="ri.gov"/></a></p>
+    </div>
+    <div class="column-4">
+      An Official Rhode Island State Website - Status: Alpha
+    </div>
+    <div class="column-4">
+    <script type="text/javascript">
+			  now=new Date();
+			  year=now.getFullYear(); 
+			 </script>&copy; 
+    <script type="text/javascript">
+        document.write(year);
+    </script> - Office of Digital Excellence, State of Rhode Island
+
+    </div>
+  </footer>
+
   </div>
+  
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -12,7 +12,7 @@
     <div class="column-4 border-box p2" style="height:253px">
       <div class="p2 bg-white border rounded">
         <a class="h4 caps bold mb1 block black" href="{% url 'web:project' p.pk %}">
-          <span class="right"><i class="icon ion-help-circled blue"></i></span>
+          <span class="right"><i class="icon ion-help-circled blue" alt="Click for more project information."></i></span>
           {% if p.name|length > 30 %}
             {{ p.name|slice:":35" }}...
           {% else %}
@@ -29,10 +29,10 @@
         {% endif %}
         <div class="h3">
         {% if p.live_site_url %}
-            <a target="_blank" href="{{ p.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
+            <a title="Live Site URL" target="_blank" href="{{ p.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
         {% endif %}
         {% if p.github_url %}
-            <a target="_blank" href="{{ p.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
+            <a title="GitHub Repo URL" target="_blank" href="{{ p.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
         {% endif %}
         </div>
       </div>

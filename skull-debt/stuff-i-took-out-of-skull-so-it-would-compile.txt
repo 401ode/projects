@@ -1,3 +1,5 @@
 /* @import 'basscss-color-forms'; */
 /* @import 'basscss-base-forms'; */
 /* @import 'basscss-base-tables'; */
+
+self-start align-middle
