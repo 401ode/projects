@@ -74,6 +74,49 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class FundingSourceCategory(Category):
+    name = models.CharField(max_length=100)
+    
+    class Meta: 
+        verbose_name_plural = "Funding Source Categories"
+    
+    def __str__(self):
+        return self.name
+
+class FundingSource(models.Model):
+    project = models.OneToOneField(
+        Project,
+        on_delete = models.CASCADE)
+    
+    funding_source_category = models.ForeignKey(
+        FundingSourceCategory,
+        on_delete = models.CASCADE,ArithmeticError
+        help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
+        
+    dollar_amount = models.PositiveIntegerField(
+        help_text = "The amount budgeted for this funding source.",
+        default=0)
+        
+    funding_status = models.PositiveIntegerField(
+        help_text = "Overall approval status for this funding source.",
+        choices = [
+            (0,"Proposed"), (1, "Approved"), (2, "Denied")
+            ]
+        default = 0,
+        )
+    
+    class Meta:
+        unique_together = ('project', 'funding_source_category',)
+    
+    def dollar_amount_display(self.dollar_amount):
+        return "${}".format(self.dollar_amount)
+        
+        
+    def __str__(self):
+        return "{} - {} - {}".format(project, funding_source_category, dollar_amount)
+    
+
+
 class ProjectManager(models.Manager):
     def search(self, terms):
         qs = self.get_queryset()
@@ -140,17 +183,17 @@ class Project(ModelBase):
         default=3
     )
     # Level of Effort Section 
-    tech_effort = models.IntegerField(
+    tech_effort = models.PositiveIntegerField(
         help_text = "Estimate of technical staff necessary for the project.",
         verbose_name = "Tech Staff Level of Effort",
         default=0
     )
-    agency_effort = models.IntegerField(
+    agency_effort = models.PositiveIntegerField(
         help_text = "Estimate of Agency staff necessary for the project.",
         verbose_name = "Agency Staff Level of Effort",
         default=0
     )
-    contractor_effort = models.IntegerField(
+    contractor_effort = models.PositiveIntegerField(
         help_text = "Estimate of contractor staff necessary for the project.",
         verbose_name = "Contractor Staff Level of Effort",
         default=0
