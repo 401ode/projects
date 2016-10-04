@@ -63,16 +63,13 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class FundingSourceCategory(Category):
-    name = models.CharField(max_length=100)
-    
     class Meta: 
         verbose_name_plural = "Funding Source Categories"
     
     def __str__(self):
         return self.name
-
-
 
 
 class ProjectManager(models.Manager):
