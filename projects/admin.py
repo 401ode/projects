@@ -13,6 +13,11 @@ from .forms import ProjectForm, CategoryForm
 
 admin.site.site_header = 'Project Dashboard Administration'
 
+class FundingSourceInline(admin.TabularInline):
+    model = FundingSource
+    extra = 3
+
+
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('department', 'agency',)
@@ -32,12 +37,16 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ('status', 'is_billable', 'cloud_dot_gov', 'is_visible')
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+    inlines = [FundingSourceInline]
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     form = CategoryForm
     # Only one field. Do we need a list_display or filter?
     # list_display = ('name')
+    list_display = ('name', 'category_type')
+    list_filter = ('name','category_type')
+
 
 @admin.register(FiscalYear)
 class FiscalYearAdmin(admin.ModelAdmin):

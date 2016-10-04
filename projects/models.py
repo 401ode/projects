@@ -58,6 +58,11 @@ class FiscalYear(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    category_type = models.PositiveIntegerField(
+        choices = [
+            (0,"Project"), (1,"Funding Source")
+            ],
+        default=0)
     
     class Meta: 
         verbose_name_plural = "Categories"
@@ -252,7 +257,8 @@ class FundingSource(models.Model):
         
     fiscal_year = models.ForeignKey(
         FiscalYear,
-        on_delete = models.CASCADE)
+        on_delete = models.CASCADE,
+        null=True)
         
     funding_status = models.PositiveIntegerField(
         help_text = "Overall approval status for this funding source.",
