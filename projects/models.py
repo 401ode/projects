@@ -30,25 +30,6 @@ class Client(models.Model):
         blank=True,
         verbose_name='OMB Agency Code'
     )
-    
-    # The following data are not necessary for State usage.
-    # omb_bureau_code = models.CharField(
-    #     help_text='OMB Bureau Code is the level below OMB Agency Code.',
-    #     max_length=255,
-    #     blank=True,
-    #     verbose_name='OMB Bureau Code'
-    # )
-    # treasury_agency_code = models.CharField(
-    #     max_length=255,
-    #     blank=True,
-    #     verbose_name='Treasury Agency Code'
-    # )
-    # 
-    # cgac_agency_code = models.CharField(
-    #     max_length=255,
-    #     blank=True,
-    #     verbose_name='CGAC Agency Code'
-    # )
 
     class Meta:
         ordering = ['department', 'agency']
@@ -105,12 +86,12 @@ class FundingSource(models.Model):
         default = 0,
         )
     
-    class Meta:
-        unique_together = ('project', 'funding_source_category',)
-    
     def dollar_amount_display(self.dollar_amount):
         return "${}".format(self.dollar_amount)
-        
+    
+    
+    class Meta:
+        unique_together = ('project', 'funding_source_category',)
         
     def __str__(self):
         return "{} - {} - {}".format(project, funding_source_category, dollar_amount)
