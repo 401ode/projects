@@ -52,6 +52,8 @@ class FiscalYear(models.Model):
     name = models.CharField(max_length=10)
     start_date = models.DateField()
     end_date = models.DateField()
+    class Meta:
+        verbose_name_plural = "Fiscal Years"
     
 
 class Category(models.Model):
@@ -229,6 +231,7 @@ class Project(ModelBase):
 
     class Meta:
         ordering = ['priority','client','name']
+        
 
     def __str__(self):
         return self.name
@@ -247,6 +250,10 @@ class FundingSource(models.Model):
         help_text = "The amount budgeted for this funding source.",
         default=0)
         
+    fiscal_year = models.ForeignKey(
+        FiscalYear,
+        on_delete = models.CASCADE)
+        
     funding_status = models.PositiveIntegerField(
         help_text = "Overall approval status for this funding source.",
         choices = [
@@ -254,12 +261,16 @@ class FundingSource(models.Model):
             ],
         default = 0,
         )
-        
-    class Meta:
-        unique_together = ('project', 'funding_source_category',)
     
     def dollar_amount_display(self):
+        """
+        Format the integer field `dollar_amount` as `$NN`.
+        """
         return "${}".format(self.dollar_amount)
+    
+    class Meta:
+        unique_together = ('project', 'funding_source_category','fiscal_year')
+        verbose_name_plural = "Funding Sources"
         
     def __str__(self):
         return "{} - {} - {}".format(self.project, self.funding_source_category, self.dollar_amount)
