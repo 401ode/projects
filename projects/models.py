@@ -1,5 +1,7 @@
 from functools import reduce
 from operator import or_
+from datetime import datetime
+
 
 from django.db import models
 from django.db.models import Q
@@ -46,6 +48,12 @@ class BusinessUnit(models.Model):
     def __str__(self):
         return self.name
 
+class FiscalYear(models.Model):
+    name = models.CharField(max_length=10)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     
@@ -64,38 +72,7 @@ class FundingSourceCategory(Category):
     def __str__(self):
         return self.name
 
-class FundingSource(models.Model):
-    project = models.OneToOneField(
-        Project,
-        on_delete = models.CASCADE)
-    
-    funding_source_category = models.ForeignKey(
-        FundingSourceCategory,
-        on_delete = models.CASCADE,ArithmeticError
-        help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
-        
-    dollar_amount = models.PositiveIntegerField(
-        help_text = "The amount budgeted for this funding source.",
-        default=0)
-        
-    funding_status = models.PositiveIntegerField(
-        help_text = "Overall approval status for this funding source.",
-        choices = [
-            (0,"Proposed"), (1, "Approved"), (2, "Denied")
-            ]
-        default = 0,
-        )
-    
-    def dollar_amount_display(self.dollar_amount):
-        return "${}".format(self.dollar_amount)
-    
-    
-    class Meta:
-        unique_together = ('project', 'funding_source_category',)
-        
-    def __str__(self):
-        return "{} - {} - {}".format(project, funding_source_category, dollar_amount)
-    
+
 
 
 class ProjectManager(models.Manager):
@@ -258,3 +235,34 @@ class Project(ModelBase):
 
     def __str__(self):
         return self.name
+
+class FundingSource(models.Model):
+    project = models.OneToOneField(
+        Project,
+        on_delete = models.CASCADE)
+    
+    funding_source_category = models.ForeignKey(
+        FundingSourceCategory,
+        on_delete = models.CASCADE,
+        help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
+        
+    dollar_amount = models.PositiveIntegerField(
+        help_text = "The amount budgeted for this funding source.",
+        default=0)
+        
+    funding_status = models.PositiveIntegerField(
+        help_text = "Overall approval status for this funding source.",
+        choices = [
+            (0,"Proposed"), (1, "Approved"), (2, "Denied")
+            ],
+        default = 0,
+        )
+        
+    class Meta:
+        unique_together = ('project', 'funding_source_category',)
+    
+    def dollar_amount_display(self):
+        return "${}".format(self.dollar_amount)
+        
+    def __str__(self):
+        return "{} - {} - {}".format(self.project, self.funding_source_category, self.dollar_amount)
