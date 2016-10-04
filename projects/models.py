@@ -242,7 +242,7 @@ class Project(ModelBase):
         return self.name
 
 class FundingSource(models.Model):
-    project = models.OneToOneField(
+    project = models.ForeignKey(
         Project,
         on_delete = models.CASCADE)
     
