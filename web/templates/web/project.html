@@ -3,6 +3,7 @@
 {% block title %} - {{project.name}} {% endblock title %}
 
 {% block content %}
+{% load project_extras %}
 <div class="clearfix mt0">
         <section id="header-information">
             <h1 id="project-name" class="inline block">{{ project.name }}</h1>
@@ -105,6 +106,7 @@
                     </tbody>
                 </table>
             </div>
+            <h3>Funding Sources</h3>
             <div class="overflow-auto">
                 <table>
                     <thead>
@@ -116,7 +118,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for mod in project.fundingsource_set %}
+                        {% for mod in project.fundingsource_set.all %}
                         <tr>
                             <td>
                                 {{ mod.fiscal_year }}
@@ -125,7 +127,7 @@
                                 {{ mod.funding_source_category }}
                             </td>
                             <td>
-                                {{ mod.get_dollar_amount_display }}
+                                {{ mod.dollar_amount|dollars }}
                             </td>
                             <td>
                                 {{ mod.funding_status }}

@@ -64,5 +64,5 @@ class FundingSourceAdmin(admin.ModelAdmin):
         """
         return self.project.client_set.first()
     # project_client.admin_order_field = "project__client"
-    list_display = ('project', 'fiscal_year', 'funding_source_category', 'dollar_amount_display', 'funding_status')
+    list_display = ('project', 'fiscal_year', 'funding_source_category', 'dollar_amount', 'funding_status')
     list_filter = ('project', 'funding_source_category', 'funding_status')

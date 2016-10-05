@@ -55,6 +55,9 @@ class FiscalYear(models.Model):
     class Meta:
         verbose_name_plural = "Fiscal Years"
     
+    def __str__(self):
+        return self.name
+    
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -268,12 +271,6 @@ class FundingSource(models.Model):
             ],
         default = 0,
         )
-    
-    def dollar_amount_display(self):
-        """
-        Format the integer field `dollar_amount` as `$NN`.
-        """
-        return "${}".format(self.dollar_amount)
     
     class Meta:
         unique_together = ('project', 'funding_source_category','fiscal_year')
