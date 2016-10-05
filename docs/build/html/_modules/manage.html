@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>manage &#8212; Project Dashboard .5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Project Dashboard .5 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for manage</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<div class="viewcode-block" id="setup_docker_sigterm_handler"><a class="viewcode-back" href="../manage.html#manage.setup_docker_sigterm_handler">[docs]</a><span class="k">def</span> <span class="nf">setup_docker_sigterm_handler</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    &#39;manage.py runserver&#39; is not set up to deal with a SIGTERM signal,</span>
+<span class="sd">    and instead expects a Ctrl-C to come to its child process. So we&#39;ll</span>
+<span class="sd">    add a SIGTERM handler here that finds all our children and gracefully</span>
+<span class="sd">    shuts them down, which provides a quick graceful exit from Docker.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;runserver&#39;</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="kn">import</span> <span class="nn">signal</span>
+    <span class="kn">import</span> <span class="nn">subprocess</span>
+
+    <span class="k">def</span> <span class="nf">get_children</span><span class="p">():</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
+            <span class="s2">&quot;ps --ppid=</span><span class="si">%d</span><span class="s2"> -o pid | awk &#39;NR&gt;1&#39; | xargs echo&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">(),</span>
+            <span class="n">shell</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">signum</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">child_pid</span> <span class="ow">in</span> <span class="n">get_children</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="n">child_pid</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">waitpid</span><span class="p">(</span><span class="n">child_pid</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setting up Docker SIGTERM handler for quick, graceful exit.&quot;</span><span class="p">)</span>
+    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="wait_for_db"><a class="viewcode-back" href="../manage.html#manage.wait_for_db">[docs]</a><span class="k">def</span> <span class="nf">wait_for_db</span><span class="p">(</span><span class="n">max_attempts</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">seconds_between_attempts</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Some manage.py commands interact with the database, and we want</span>
+<span class="sd">    them to be directly callable from `docker-compose run`. However,</span>
+<span class="sd">    because docker may start the database container at the same time</span>
+<span class="sd">    as it runs `manage.py`, we potentially face a race condition, and</span>
+<span class="sd">    the manage.py command may attempt to connect to a database that</span>
+<span class="sd">    isn&#39;t yet ready for connections.</span>
+
+<span class="sd">    To alleviate this, we&#39;ll just wait for the database before calling</span>
+<span class="sd">    the manage.py command.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="kn">import</span> <span class="nn">time</span>
+    <span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">DEFAULT_DB_ALIAS</span><span class="p">,</span> <span class="n">connections</span>
+    <span class="kn">from</span> <span class="nn">django.db.utils</span> <span class="k">import</span> <span class="n">OperationalError</span>
+
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">connections</span><span class="p">[</span><span class="n">DEFAULT_DB_ALIAS</span><span class="p">]</span>
+    <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">ensure_connection</span><span class="p">()</span>
+            <span class="k">break</span>
+        <span class="k">except</span> <span class="n">OperationalError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">attempts</span> <span class="o">&gt;=</span> <span class="n">max_attempts</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">e</span>
+            <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds_between_attempts</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attempting to connect to database.&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection to database established.&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;DJANGO_SETTINGS_MODULE&quot;</span><span class="p">,</span> <span class="s2">&quot;app.settings&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;/projects&#39;</span><span class="p">:</span>
+        <span class="n">setup_docker_sigterm_handler</span><span class="p">()</span>
+        <span class="n">wait_for_db</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">django.core.management</span> <span class="k">import</span> <span class="n">execute_from_command_line</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="c1"># Assume the user wants to run us in docker.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">execvp</span><span class="p">(</span><span class="s1">&#39;docker-compose&#39;</span><span class="p">,</span> <span class="p">[</span>
+                <span class="s1">&#39;docker-compose&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;app&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span>
+            <span class="p">]</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="c1"># Apparently docker-compose isn&#39;t installed, so just raise</span>
+            <span class="c1"># the original ImportError.</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+    <span class="n">execute_from_command_line</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Brian J. McGuirk (ODE).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

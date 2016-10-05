@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>projects.tests.test_projects &#8212; Project Dashboard .5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="Project Dashboard .5 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for projects.tests.test_projects</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.db.utils</span> <span class="k">import</span> <span class="n">IntegrityError</span>
+<span class="kn">from</span> <span class="nn">django.test</span> <span class="k">import</span> <span class="n">TestCase</span>
+
+<span class="kn">from</span> <span class="nn">projects.models</span> <span class="k">import</span> <span class="n">Project</span>
+
+
+<div class="viewcode-block" id="ProjectModelTestCase"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectModelTestCase">[docs]</a><span class="k">class</span> <span class="nc">ProjectModelTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is pretty weak, as tests go. We&#39;ll have to work on this.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+
+<div class="viewcode-block" id="ProjectModelTestCase.test_status_cannot_be_null"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectModelTestCase.test_status_cannot_be_null">[docs]</a>    <span class="k">def</span> <span class="nf">test_status_cannot_be_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Project(status=None).save()</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">):</span>
+            <span class="n">Project</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ProjectModelTestCase.test_many_rifans_accounts_can_be_null"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectModelTestCase.test_many_rifans_accounts_can_be_null">[docs]</a>    <span class="k">def</span> <span class="nf">test_many_rifans_accounts_can_be_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Project</span><span class="p">(</span><span class="n">rifans_number</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">Project</span><span class="p">(</span><span class="n">rifans_number</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="ProjectSearchTestCase"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase">[docs]</a><span class="k">class</span> <span class="nc">ProjectSearchTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectSearchTestCase.setUp"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Project</span><span class="p">(</span><span class="n">rifans_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foo bar&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">Project</span><span class="p">(</span><span class="n">rifans_number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foo baz&quot;</span><span class="p">,</span> <span class="n">tagline</span><span class="o">=</span><span class="s2">&quot;tagline!&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ProjectSearchTestCase.get_search_results"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase.get_search_results">[docs]</a>    <span class="k">def</span> <span class="nf">get_search_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">qs</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;rifans_number&#39;</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="ProjectSearchTestCase.test_basic_search"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase.test_basic_search">[docs]</a>    <span class="k">def</span> <span class="nf">test_basic_search</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">results1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_search_results</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+        <span class="n">results2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_search_results</span><span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertListEqual</span><span class="p">(</span><span class="n">results1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertListEqual</span><span class="p">(</span><span class="n">results2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="ProjectSearchTestCase.test_case_insensitivity"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase.test_case_insensitivity">[docs]</a>    <span class="k">def</span> <span class="nf">test_case_insensitivity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_search_results</span><span class="p">(</span><span class="s1">&#39;FOO&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertListEqual</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="ProjectSearchTestCase.test_no_results"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase.test_no_results">[docs]</a>    <span class="k">def</span> <span class="nf">test_no_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_search_results</span><span class="p">(</span><span class="s1">&#39;gobbledygook&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertListEqual</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="p">[])</span></div>
+
+<div class="viewcode-block" id="ProjectSearchTestCase.test_query_in_tagline"><a class="viewcode-back" href="../../../projects.tests.html#projects.tests.test_projects.ProjectSearchTestCase.test_query_in_tagline">[docs]</a>    <span class="k">def</span> <span class="nf">test_query_in_tagline</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_search_results</span><span class="p">(</span><span class="s1">&#39;tagline&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertListEqual</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">])</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Brian J. McGuirk (ODE).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -23,7 +23,10 @@ psycopg2==2.6.1
 ptyprocess==0.5.1
 pyflakes==1.0.0
 python-dateutil==2.5.3
+recommonmark==0.2.0
 simplegeneric==0.8.1
+sphinx==1.4.8
+sphinx-autobuild==0.6.0
 six==1.10.0
 traitlets==4.2.1
 whitenoise==3.0

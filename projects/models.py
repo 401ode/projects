@@ -243,7 +243,7 @@ class Project(ModelBase):
         
     def get_project_completion_percentage(self):
         if self.start_date == self.go_live_date:
-            return 10
+            return 100
         elif self.start_date and self.go_live_date:
             today = datetime.today().date()
             total_days = (self.go_live_date - self.start_date).days
