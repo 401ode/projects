@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>web.views package &#8212; Project Dashboard .5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Project Dashboard .5 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="web-views-package">
+<h1>web.views package<a class="headerlink" href="#web-views-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web.views.home">
+<span id="web-views-home-module"></span><h2>web.views.home module<a class="headerlink" href="#module-web.views.home" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="web.views.home.HomeView">
+<em class="property">class </em><code class="descclassname">web.views.home.</code><code class="descname">HomeView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/web/views/home.html#HomeView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web.views.home.HomeView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<dl class="attribute">
+<dt id="web.views.home.HomeView.context_object_name">
+<code class="descname">context_object_name</code><em class="property"> = 'projects'</em><a class="headerlink" href="#web.views.home.HomeView.context_object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="web.views.home.HomeView.get_context_data">
+<code class="descname">get_context_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/web/views/home.html#HomeView.get_context_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web.views.home.HomeView.get_context_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="web.views.home.HomeView.get_queryset">
+<code class="descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/web/views/home.html#HomeView.get_queryset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web.views.home.HomeView.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.home.HomeView.model">
+<code class="descname">model</code><a class="headerlink" href="#web.views.home.HomeView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Project</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.home.HomeView.ordering">
+<code class="descname">ordering</code><em class="property"> = 'name'</em><a class="headerlink" href="#web.views.home.HomeView.ordering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.home.HomeView.paginate_by">
+<code class="descname">paginate_by</code><em class="property"> = 100</em><a class="headerlink" href="#web.views.home.HomeView.paginate_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="web.views.home.HomeView.search_stats">
+<code class="descname">search_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/web/views/home.html#HomeView.search_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web.views.home.HomeView.search_stats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.home.HomeView.sort_fields">
+<code class="descname">sort_fields</code><em class="property"> = ['name', 'created', '-created']</em><a class="headerlink" href="#web.views.home.HomeView.sort_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.home.HomeView.template_name">
+<code class="descname">template_name</code><em class="property"> = 'web/index.html'</em><a class="headerlink" href="#web.views.home.HomeView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-web.views.project">
+<span id="web-views-project-module"></span><h2>web.views.project module<a class="headerlink" href="#module-web.views.project" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="web.views.project.ProjectView">
+<em class="property">class </em><code class="descclassname">web.views.project.</code><code class="descname">ProjectView</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/web/views/project.html#ProjectView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web.views.project.ProjectView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.views.generic.detail.DetailView</span></code></p>
+<dl class="attribute">
+<dt id="web.views.project.ProjectView.context_object_name">
+<code class="descname">context_object_name</code><em class="property"> = 'project'</em><a class="headerlink" href="#web.views.project.ProjectView.context_object_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.project.ProjectView.model">
+<code class="descname">model</code><a class="headerlink" href="#web.views.project.ProjectView.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Project</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="web.views.project.ProjectView.template_name">
+<code class="descname">template_name</code><em class="property"> = 'web/project.html'</em><a class="headerlink" href="#web.views.project.ProjectView.template_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-web.views">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-web.views" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">web.views package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-web.views.home">web.views.home module</a></li>
+<li><a class="reference internal" href="#module-web.views.project">web.views.project module</a></li>
+<li><a class="reference internal" href="#module-web.views">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/web.views.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Brian J. McGuirk (ODE).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/web.views.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

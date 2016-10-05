@@ -1,0 +1,617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>projects.migrations package &#8212; Project Dashboard .5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Project Dashboard .5 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="projects-migrations-package">
+<h1>projects.migrations package<a class="headerlink" href="#projects-migrations-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-projects.migrations.0001_initial">
+<span id="projects-migrations-0001-initial-module"></span><h2>projects.migrations.0001_initial module<a class="headerlink" href="#module-projects.migrations.0001_initial" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0001_initial.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0001_initial.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0001_initial.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0001_initial.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = []</em><a class="headerlink" href="#projects.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0001_initial.Migration.initial">
+<code class="descname">initial</code><em class="property"> = True</em><a class="headerlink" href="#projects.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0001_initial.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('created', &lt;django.db.models.fields.DateTimeField&gt;), ('updated', &lt;django.db.models.fields.DateTimeField&gt;), ('name', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.TextField&gt;)], name='Project', options={'abstract': False}&gt;]</em><a class="headerlink" href="#projects.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0002_client">
+<span id="projects-migrations-0002-client-module"></span><h2>projects.migrations.0002_client module<a class="headerlink" href="#module-projects.migrations.0002_client" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0002_client.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0002_client.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0002_client.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0002_client.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0002_client.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0001_initial')]</em><a class="headerlink" href="#projects.migrations.0002_client.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0002_client.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('department', &lt;django.db.models.fields.CharField&gt;), ('agency', &lt;django.db.models.fields.CharField&gt;), ('omb_agency_code', &lt;django.db.models.fields.CharField&gt;), ('omb_bureau_code', &lt;django.db.models.fields.CharField&gt;), ('treasury_agency_code', &lt;django.db.models.fields.CharField&gt;), ('cgac_agency_code', &lt;django.db.models.fields.CharField&gt;)], name='Client', options={'verbose_name_plural': 'Clients', 'verbose_name': 'Client'}&gt;]</em><a class="headerlink" href="#projects.migrations.0002_client.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0003_auto_20160512_0229">
+<span id="projects-migrations-0003-auto-20160512-0229-module"></span><h2>projects.migrations.0003_auto_20160512_0229 module<a class="headerlink" href="#module-projects.migrations.0003_auto_20160512_0229" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0003_auto_20160512_0229.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0003_auto_20160512_0229.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0003_auto_20160512_0229.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0003_auto_20160512_0229.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0003_auto_20160512_0229.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0002_client')]</em><a class="headerlink" href="#projects.migrations.0003_auto_20160512_0229.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0003_auto_20160512_0229.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='cgac_agency_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='omb_agency_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='omb_bureau_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='treasury_agency_code'&gt;]</em><a class="headerlink" href="#projects.migrations.0003_auto_20160512_0229.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0004_project_client">
+<span id="projects-migrations-0004-project-client-module"></span><h2>projects.migrations.0004_project_client module<a class="headerlink" href="#module-projects.migrations.0004_project_client" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0004_project_client.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0004_project_client.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0004_project_client.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0004_project_client.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0004_project_client.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0003_auto_20160512_0229')]</em><a class="headerlink" href="#projects.migrations.0004_project_client.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0004_project_client.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AddField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='project', name='client'&gt;]</em><a class="headerlink" href="#projects.migrations.0004_project_client.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0005_auto_20160512_1347">
+<span id="projects-migrations-0005-auto-20160512-1347-module"></span><h2>projects.migrations.0005_auto_20160512_1347 module<a class="headerlink" href="#module-projects.migrations.0005_auto_20160512_1347" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0005_auto_20160512_1347.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0005_auto_20160512_1347.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0005_auto_20160512_1347.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0005_auto_20160512_1347.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0005_auto_20160512_1347.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0004_project_client')]</em><a class="headerlink" href="#projects.migrations.0005_auto_20160512_1347.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0005_auto_20160512_1347.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterModelOptions  name='client', options={}&gt;]</em><a class="headerlink" href="#projects.migrations.0005_auto_20160512_1347.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0006_auto_20160512_1747">
+<span id="projects-migrations-0006-auto-20160512-1747-module"></span><h2>projects.migrations.0006_auto_20160512_1747 module<a class="headerlink" href="#module-projects.migrations.0006_auto_20160512_1747" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0006_auto_20160512_1747.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0006_auto_20160512_1747.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0006_auto_20160512_1747.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0006_auto_20160512_1747.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0006_auto_20160512_1747.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0005_auto_20160512_1347')]</em><a class="headerlink" href="#projects.migrations.0006_auto_20160512_1747.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0006_auto_20160512_1747.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterModelOptions  name='client', options={'ordering': ['department', 'agency']}&gt;, &lt;AlterModelOptions  name='project', options={'ordering': ['name']}&gt;, &lt;AddField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='active'&gt;, &lt;AddField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='billable'&gt;, &lt;AddField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='cloud_dot_gov'&gt;, &lt;AddField  field=&lt;django.db.models.fields.URLField&gt;, model_name='project', name='github_url'&gt;, &lt;AddField  field=&lt;django.db.models.fields.TextField&gt;, model_name='project', name='impact'&gt;, &lt;AddField  field=&lt;django.db.models.fields.URLField&gt;, model_name='project', name='live_site_url'&gt;, &lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='mb_number'&gt;, &lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='slug'&gt;, &lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='tagline'&gt;, &lt;AddField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='tock_id'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='project', name='client'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.TextField&gt;, model_name='project', name='description'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='name'&gt;]</em><a class="headerlink" href="#projects.migrations.0006_auto_20160512_1747.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0007_auto_20160514_2311">
+<span id="projects-migrations-0007-auto-20160514-2311-module"></span><h2>projects.migrations.0007_auto_20160514_2311 module<a class="headerlink" href="#module-projects.migrations.0007_auto_20160514_2311" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0007_auto_20160514_2311.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0007_auto_20160514_2311.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0007_auto_20160514_2311.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0007_auto_20160514_2311.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0007_auto_20160514_2311.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0006_auto_20160512_1747')]</em><a class="headerlink" href="#projects.migrations.0007_auto_20160514_2311.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0007_auto_20160514_2311.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;RemoveField  model_name='project', name='active'&gt;, &lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='project_lead'&gt;, &lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='status'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='agency'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='cgac_agency_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='department'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='omb_agency_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='omb_bureau_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='treasury_agency_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='billable'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='cloud_dot_gov'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.URLField&gt;, model_name='project', name='github_url'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.URLField&gt;, model_name='project', name='live_site_url'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='mb_number'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='tock_id'&gt;]</em><a class="headerlink" href="#projects.migrations.0007_auto_20160514_2311.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0008_auto_20160519_2038">
+<span id="projects-migrations-0008-auto-20160519-2038-module"></span><h2>projects.migrations.0008_auto_20160519_2038 module<a class="headerlink" href="#module-projects.migrations.0008_auto_20160519_2038" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0008_auto_20160519_2038.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0008_auto_20160519_2038.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0008_auto_20160519_2038.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0008_auto_20160519_2038.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0008_auto_20160519_2038.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0007_auto_20160514_2311')]</em><a class="headerlink" href="#projects.migrations.0008_auto_20160519_2038.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0008_auto_20160519_2038.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='project', name='client'&gt;]</em><a class="headerlink" href="#projects.migrations.0008_auto_20160519_2038.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0009_auto_20160519_2044">
+<span id="projects-migrations-0009-auto-20160519-2044-module"></span><h2>projects.migrations.0009_auto_20160519_2044 module<a class="headerlink" href="#module-projects.migrations.0009_auto_20160519_2044" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0009_auto_20160519_2044.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0009_auto_20160519_2044.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0009_auto_20160519_2044.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0009_auto_20160519_2044.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0009_auto_20160519_2044.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0008_auto_20160519_2038')]</em><a class="headerlink" href="#projects.migrations.0009_auto_20160519_2044.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0009_auto_20160519_2044.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='billable'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='status'&gt;]</em><a class="headerlink" href="#projects.migrations.0009_auto_20160519_2044.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0010_project_is_visible">
+<span id="projects-migrations-0010-project-is-visible-module"></span><h2>projects.migrations.0010_project_is_visible module<a class="headerlink" href="#module-projects.migrations.0010_project_is_visible" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0010_project_is_visible.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0010_project_is_visible.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0010_project_is_visible.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0010_project_is_visible.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0010_project_is_visible.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0009_auto_20160519_2044')]</em><a class="headerlink" href="#projects.migrations.0010_project_is_visible.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0010_project_is_visible.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AddField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='is_visible'&gt;]</em><a class="headerlink" href="#projects.migrations.0010_project_is_visible.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0011_auto_20160601_1903">
+<span id="projects-migrations-0011-auto-20160601-1903-module"></span><h2>projects.migrations.0011_auto_20160601_1903 module<a class="headerlink" href="#module-projects.migrations.0011_auto_20160601_1903" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0011_auto_20160601_1903.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0011_auto_20160601_1903.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0011_auto_20160601_1903.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0011_auto_20160601_1903.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0011_auto_20160601_1903.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0010_project_is_visible')]</em><a class="headerlink" href="#projects.migrations.0011_auto_20160601_1903.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0011_auto_20160601_1903.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('name', &lt;django.db.models.fields.CharField&gt;)], name='BusinessUnit'&gt;, &lt;AddField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='project', name='business_unit'&gt;]</em><a class="headerlink" href="#projects.migrations.0011_auto_20160601_1903.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0012_add_is_billable">
+<span id="projects-migrations-0012-add-is-billable-module"></span><h2>projects.migrations.0012_add_is_billable module<a class="headerlink" href="#module-projects.migrations.0012_add_is_billable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0012_add_is_billable.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0012_add_is_billable.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0012_add_is_billable.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0012_add_is_billable.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0012_add_is_billable.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0011_auto_20160601_1903')]</em><a class="headerlink" href="#projects.migrations.0012_add_is_billable.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0012_add_is_billable.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AddField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='is_billable'&gt;]</em><a class="headerlink" href="#projects.migrations.0012_add_is_billable.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0013_populate_is_billable">
+<span id="projects-migrations-0013-populate-is-billable-module"></span><h2>projects.migrations.0013_populate_is_billable module<a class="headerlink" href="#module-projects.migrations.0013_populate_is_billable" title="Permalink to this headline">¶</a></h2>
+<p>For more details on this migration, see:</p>
+<p><a class="reference external" href="https://github.com/18F/projects/issues/37">https://github.com/18F/projects/issues/37</a></p>
+<dl class="class">
+<dt id="projects.migrations.0013_populate_is_billable.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0013_populate_is_billable.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0013_populate_is_billable.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0013_populate_is_billable.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0013_populate_is_billable.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0012_add_is_billable')]</em><a class="headerlink" href="#projects.migrations.0013_populate_is_billable.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0013_populate_is_billable.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;RunPython &lt;function convert_billable_to_boolean&gt; reverse_code=&lt;function RunPython.noop&gt;&gt;]</em><a class="headerlink" href="#projects.migrations.0013_populate_is_billable.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="projects.migrations.0013_populate_is_billable.convert_billable_to_boolean">
+<code class="descclassname">projects.migrations.0013_populate_is_billable.</code><code class="descname">convert_billable_to_boolean</code><span class="sig-paren">(</span><em>apps</em>, <em>schema_editor</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0013_populate_is_billable.html#convert_billable_to_boolean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0013_populate_is_billable.convert_billable_to_boolean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0014_drop_billable">
+<span id="projects-migrations-0014-drop-billable-module"></span><h2>projects.migrations.0014_drop_billable module<a class="headerlink" href="#module-projects.migrations.0014_drop_billable" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0014_drop_billable.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0014_drop_billable.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0014_drop_billable.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0014_drop_billable.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0014_drop_billable.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0013_populate_is_billable')]</em><a class="headerlink" href="#projects.migrations.0014_drop_billable.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0014_drop_billable.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;RemoveField  model_name='project', name='billable'&gt;]</em><a class="headerlink" href="#projects.migrations.0014_drop_billable.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0015_auto_20160929_1102">
+<span id="projects-migrations-0015-auto-20160929-1102-module"></span><h2>projects.migrations.0015_auto_20160929_1102 module<a class="headerlink" href="#module-projects.migrations.0015_auto_20160929_1102" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0015_auto_20160929_1102.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0015_auto_20160929_1102.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0015_auto_20160929_1102.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0015_auto_20160929_1102.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0015_auto_20160929_1102.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0014_drop_billable')]</em><a class="headerlink" href="#projects.migrations.0015_auto_20160929_1102.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0015_auto_20160929_1102.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('name', &lt;django.db.models.fields.CharField&gt;)], name='Category'&gt;, &lt;AlterModelOptions  name='project', options={'ordering': ['priority', 'client', 'name']}&gt;, &lt;RemoveField  model_name='client', name='cgac_agency_code'&gt;, &lt;RemoveField  model_name='client', name='omb_bureau_code'&gt;, &lt;RemoveField  model_name='client', name='treasury_agency_code'&gt;, &lt;RemoveField  model_name='project', name='mb_number'&gt;, &lt;RemoveField  model_name='project', name='tock_id'&gt;, &lt;AddField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='agency_effort'&gt;, &lt;AddField  field=&lt;django.db.models.fields.TextField&gt;, model_name='project', name='blockers'&gt;, &lt;AddField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='contractor_effort'&gt;, &lt;AddField  field=&lt;django.db.models.fields.DateField&gt;, model_name='project', name='go_live_date'&gt;, &lt;AddField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='priority'&gt;, &lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='rifans_number'&gt;, &lt;AddField  field=&lt;django.db.models.fields.DateField&gt;, model_name='project', name='start_date'&gt;, &lt;AddField  field=&lt;django.db.models.fields.IntegerField&gt;, model_name='project', name='tech_effort'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='department'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='client', name='omb_agency_code'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='project', name='business_unit'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.URLField&gt;, model_name='project', name='github_url'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.BooleanField&gt;, model_name='project', name='is_billable'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='name'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='project_lead'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.SlugField&gt;, model_name='project', name='slug'&gt;, &lt;AddField  field=&lt;django.db.models.fields.related.ManyToManyField&gt;, model_name='project', name='categories'&gt;]</em><a class="headerlink" href="#projects.migrations.0015_auto_20160929_1102.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0016_auto_20161004_1030">
+<span id="projects-migrations-0016-auto-20161004-1030-module"></span><h2>projects.migrations.0016_auto_20161004_1030 module<a class="headerlink" href="#module-projects.migrations.0016_auto_20161004_1030" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0016_auto_20161004_1030.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0016_auto_20161004_1030.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0016_auto_20161004_1030.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0016_auto_20161004_1030.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0016_auto_20161004_1030.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0015_auto_20160929_1102')]</em><a class="headerlink" href="#projects.migrations.0016_auto_20161004_1030.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0016_auto_20161004_1030.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;CreateModel  fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('name', &lt;django.db.models.fields.CharField&gt;), ('start_date', &lt;django.db.models.fields.DateField&gt;), ('end_date', &lt;django.db.models.fields.DateField&gt;)], name='FiscalYear'&gt;, &lt;CreateModel  fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('dollar_amount', &lt;django.db.models.fields.PositiveIntegerField&gt;), ('funding_status', &lt;django.db.models.fields.PositiveIntegerField&gt;)], name='FundingSource'&gt;, &lt;CreateModel  name='FundingSourceCategory', fields=[('category_ptr', &lt;django.db.models.fields.related.OneToOneField&gt;)], options={'verbose_name_plural': 'Funding Source Categories'}, bases=('projects.category',)&gt;, &lt;AlterModelOptions  name='businessunit', options={'verbose_name_plural': 'Business Units'}&gt;, &lt;AlterModelOptions  name='category', options={'verbose_name_plural': 'Categories'}&gt;, &lt;AlterField  field=&lt;django.db.models.fields.PositiveIntegerField&gt;, model_name='project', name='agency_effort'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.PositiveIntegerField&gt;, model_name='project', name='contractor_effort'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.CharField&gt;, model_name='project', name='rifans_number'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.PositiveIntegerField&gt;, model_name='project', name='tech_effort'&gt;, &lt;AddField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='fundingsource', name='funding_source_category'&gt;, &lt;AddField  field=&lt;django.db.models.fields.related.OneToOneField&gt;, model_name='fundingsource', name='project'&gt;, &lt;AlterUniqueTogether  name='fundingsource', unique_together={('project', 'funding_source_category')}&gt;]</em><a class="headerlink" href="#projects.migrations.0016_auto_20161004_1030.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0017_auto_20161004_1320">
+<span id="projects-migrations-0017-auto-20161004-1320-module"></span><h2>projects.migrations.0017_auto_20161004_1320 module<a class="headerlink" href="#module-projects.migrations.0017_auto_20161004_1320" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0017_auto_20161004_1320.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0017_auto_20161004_1320.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0017_auto_20161004_1320.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0017_auto_20161004_1320.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0017_auto_20161004_1320.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0016_auto_20161004_1030')]</em><a class="headerlink" href="#projects.migrations.0017_auto_20161004_1320.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0017_auto_20161004_1320.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterModelOptions  name='fiscalyear', options={'verbose_name_plural': 'Fiscal Years'}&gt;, &lt;AlterModelOptions  name='fundingsource', options={'verbose_name_plural': 'Funding Sources'}&gt;, &lt;AddField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='fundingsource', name='fiscal_year'&gt;, &lt;AlterUniqueTogether  name='fundingsource', unique_together={('project', 'funding_source_category', 'fiscal_year')}&gt;]</em><a class="headerlink" href="#projects.migrations.0017_auto_20161004_1320.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0018_category_category_type">
+<span id="projects-migrations-0018-category-category-type-module"></span><h2>projects.migrations.0018_category_category_type module<a class="headerlink" href="#module-projects.migrations.0018_category_category_type" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0018_category_category_type.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0018_category_category_type.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0018_category_category_type.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0018_category_category_type.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0018_category_category_type.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0017_auto_20161004_1320')]</em><a class="headerlink" href="#projects.migrations.0018_category_category_type.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0018_category_category_type.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AddField  field=&lt;django.db.models.fields.CharField&gt;, model_name='category', name='category_type'&gt;]</em><a class="headerlink" href="#projects.migrations.0018_category_category_type.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0019_auto_20161004_1352">
+<span id="projects-migrations-0019-auto-20161004-1352-module"></span><h2>projects.migrations.0019_auto_20161004_1352 module<a class="headerlink" href="#module-projects.migrations.0019_auto_20161004_1352" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0019_auto_20161004_1352.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0019_auto_20161004_1352.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0019_auto_20161004_1352.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0019_auto_20161004_1352.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0019_auto_20161004_1352.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0018_category_category_type'), ('projects', '0024_auto_20161005_1105')]</em><a class="headerlink" href="#projects.migrations.0019_auto_20161004_1352.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0019_auto_20161004_1352.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.PositiveIntegerField&gt;, model_name='category', name='category_type'&gt;]</em><a class="headerlink" href="#projects.migrations.0019_auto_20161004_1352.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0020_auto_20161004_1538">
+<span id="projects-migrations-0020-auto-20161004-1538-module"></span><h2>projects.migrations.0020_auto_20161004_1538 module<a class="headerlink" href="#module-projects.migrations.0020_auto_20161004_1538" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0020_auto_20161004_1538.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0020_auto_20161004_1538.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0020_auto_20161004_1538.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0020_auto_20161004_1538.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0020_auto_20161004_1538.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0019_auto_20161004_1352')]</em><a class="headerlink" href="#projects.migrations.0020_auto_20161004_1538.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0020_auto_20161004_1538.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.PositiveIntegerField&gt;, model_name='category', name='category_type', preserve_default=False&gt;]</em><a class="headerlink" href="#projects.migrations.0020_auto_20161004_1538.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0021_auto_20161004_1610">
+<span id="projects-migrations-0021-auto-20161004-1610-module"></span><h2>projects.migrations.0021_auto_20161004_1610 module<a class="headerlink" href="#module-projects.migrations.0021_auto_20161004_1610" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0021_auto_20161004_1610.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0021_auto_20161004_1610.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0021_auto_20161004_1610.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0021_auto_20161004_1610.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0021_auto_20161004_1610.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0020_auto_20161004_1538')]</em><a class="headerlink" href="#projects.migrations.0021_auto_20161004_1610.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0021_auto_20161004_1610.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.PositiveIntegerField&gt;, model_name='category', name='category_type'&gt;, &lt;AlterField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='fundingsource', name='project'&gt;]</em><a class="headerlink" href="#projects.migrations.0021_auto_20161004_1610.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0022_auto_20161005_0918">
+<span id="projects-migrations-0022-auto-20161005-0918-module"></span><h2>projects.migrations.0022_auto_20161005_0918 module<a class="headerlink" href="#module-projects.migrations.0022_auto_20161005_0918" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0022_auto_20161005_0918.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0022_auto_20161005_0918.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0022_auto_20161005_0918.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0022_auto_20161005_0918.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0022_auto_20161005_0918.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0021_auto_20161004_1610')]</em><a class="headerlink" href="#projects.migrations.0022_auto_20161005_0918.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0022_auto_20161005_0918.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.related.ForeignKey&gt;, model_name='fundingsource', name='funding_source_category'&gt;]</em><a class="headerlink" href="#projects.migrations.0022_auto_20161005_0918.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0023_auto_20161005_1025">
+<span id="projects-migrations-0023-auto-20161005-1025-module"></span><h2>projects.migrations.0023_auto_20161005_1025 module<a class="headerlink" href="#module-projects.migrations.0023_auto_20161005_1025" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="projects.migrations.0023_auto_20161005_1025.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0023_auto_20161005_1025.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0023_auto_20161005_1025.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0023_auto_20161005_1025.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0023_auto_20161005_1025.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0022_auto_20161005_0918')]</em><a class="headerlink" href="#projects.migrations.0023_auto_20161005_1025.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0023_auto_20161005_1025.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;AlterField  field=&lt;django.db.models.fields.DecimalField&gt;, model_name='fundingsource', name='dollar_amount'&gt;]</em><a class="headerlink" href="#projects.migrations.0023_auto_20161005_1025.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations.0024_auto_20161005_1105">
+<span id="projects-migrations-0024-auto-20161005-1105-module"></span><h2>projects.migrations.0024_auto_20161005_1105 module<a class="headerlink" href="#module-projects.migrations.0024_auto_20161005_1105" title="Permalink to this headline">¶</a></h2>
+<p>Manual migration to compensate for changing <cite>category_type</cite> of 
+&#8216;Category&#8217; model from str to int.</p>
+<dl class="class">
+<dt id="projects.migrations.0024_auto_20161005_1105.Migration">
+<em class="property">class </em><code class="descclassname">projects.migrations.0024_auto_20161005_1105.</code><code class="descname">Migration</code><span class="sig-paren">(</span><em>name</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0024_auto_20161005_1105.html#Migration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0024_auto_20161005_1105.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="attribute">
+<dt id="projects.migrations.0024_auto_20161005_1105.Migration.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [('projects', '0018_category_category_type')]</em><a class="headerlink" href="#projects.migrations.0024_auto_20161005_1105.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="projects.migrations.0024_auto_20161005_1105.Migration.operations">
+<code class="descname">operations</code><em class="property"> = [&lt;RunPython &lt;function update_category_from_str_to_int&gt;&gt;]</em><a class="headerlink" href="#projects.migrations.0024_auto_20161005_1105.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="projects.migrations.0024_auto_20161005_1105.update_category_from_str_to_int">
+<code class="descclassname">projects.migrations.0024_auto_20161005_1105.</code><code class="descname">update_category_from_str_to_int</code><span class="sig-paren">(</span><em>apps=&lt;django.apps.registry.Apps object&gt;</em>, <em>schema_editor=&lt;django.db.backends.postgresql.schema.DatabaseSchemaEditor object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/projects/migrations/0024_auto_20161005_1105.html#update_category_from_str_to_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#projects.migrations.0024_auto_20161005_1105.update_category_from_str_to_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get categories model from django app. 
+Get db_alias from connection schema editor.Get
+Get all Category objects. 
+If category_type for any category == &#8220;Project&#8221;,
+then make it int(0). 
+Save all categories.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-projects.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-projects.migrations" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">projects.migrations package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0001_initial">projects.migrations.0001_initial module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0002_client">projects.migrations.0002_client module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0003_auto_20160512_0229">projects.migrations.0003_auto_20160512_0229 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0004_project_client">projects.migrations.0004_project_client module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0005_auto_20160512_1347">projects.migrations.0005_auto_20160512_1347 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0006_auto_20160512_1747">projects.migrations.0006_auto_20160512_1747 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0007_auto_20160514_2311">projects.migrations.0007_auto_20160514_2311 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0008_auto_20160519_2038">projects.migrations.0008_auto_20160519_2038 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0009_auto_20160519_2044">projects.migrations.0009_auto_20160519_2044 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0010_project_is_visible">projects.migrations.0010_project_is_visible module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0011_auto_20160601_1903">projects.migrations.0011_auto_20160601_1903 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0012_add_is_billable">projects.migrations.0012_add_is_billable module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0013_populate_is_billable">projects.migrations.0013_populate_is_billable module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0014_drop_billable">projects.migrations.0014_drop_billable module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0015_auto_20160929_1102">projects.migrations.0015_auto_20160929_1102 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0016_auto_20161004_1030">projects.migrations.0016_auto_20161004_1030 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0017_auto_20161004_1320">projects.migrations.0017_auto_20161004_1320 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0018_category_category_type">projects.migrations.0018_category_category_type module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0019_auto_20161004_1352">projects.migrations.0019_auto_20161004_1352 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0020_auto_20161004_1538">projects.migrations.0020_auto_20161004_1538 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0021_auto_20161004_1610">projects.migrations.0021_auto_20161004_1610 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0022_auto_20161005_0918">projects.migrations.0022_auto_20161005_0918 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0023_auto_20161005_1025">projects.migrations.0023_auto_20161005_1025 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations.0024_auto_20161005_1105">projects.migrations.0024_auto_20161005_1105 module</a></li>
+<li><a class="reference internal" href="#module-projects.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/projects.migrations.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Brian J. McGuirk (ODE).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/projects.migrations.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
