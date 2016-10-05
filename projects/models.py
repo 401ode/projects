@@ -255,9 +255,10 @@ class FundingSource(models.Model):
         on_delete = models.CASCADE,
         help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
         
-    dollar_amount = models.PositiveIntegerField(
+    dollar_amount = models.DecimalField(
         help_text = "The amount budgeted for this funding source.",
-        default=0)
+        decimal_places=2,
+        default=0.00)
         
     fiscal_year = models.ForeignKey(
         FiscalYear,
