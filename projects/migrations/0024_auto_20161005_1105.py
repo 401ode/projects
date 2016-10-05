@@ -26,7 +26,8 @@ def update_category_from_str_to_int(apps=apps, schema_editor=connection.schema_e
     for category in categories:
         if category.category_type == "Project":
             category.category_type = int(0)
-    categories.save()
+            category.save()
+    
 
 
 class Migration(migrations.Migration):
@@ -36,5 +37,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(update_category_from_str_to_int()),
+        migrations.RunPython(update_category_from_str_to_int),
     ]
