@@ -6,6 +6,7 @@ from datetime import datetime
 from django.db import models
 from django.db.models import Q
 
+from .templatetags import project_extras
 
 class ModelBase(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -258,6 +259,7 @@ class FundingSource(models.Model):
     dollar_amount = models.DecimalField(
         help_text = "The amount budgeted for this funding source.",
         decimal_places=2,
+        max_digits=11,
         default=0.00)
         
     fiscal_year = models.ForeignKey(
@@ -272,6 +274,9 @@ class FundingSource(models.Model):
             ],
         default = 0,
         )
+        
+    def dollar_amount_display(self):
+        return project_extras.prepend_dollars(self.dollar_amount)
     
     class Meta:
         unique_together = ('project', 'funding_source_category','fiscal_year')

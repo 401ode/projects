@@ -130,7 +130,7 @@
                                 {{ mod.dollar_amount|dollars }}
                             </td>
                             <td>
-                                {{ mod.funding_status }}
+                                {{ mod.get_funding_status_display }}
                             </td>
                         {% endfor %}
                         </tr>
