@@ -13,7 +13,7 @@ gunicorn==19.4.5
 ipython==4.2.0
 ipython-genutils==0.1.0
 jmespath==0.9.0
-django-markdownx=1.6.3
+django-markdownx==1.6.3
 mccabe==0.4.0
 pep8==1.7.0
 pexpect==4.0.1
