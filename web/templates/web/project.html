@@ -105,6 +105,37 @@
                     </tbody>
                 </table>
             </div>
+            <div class="overflow-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fiscal Year</th>
+                            <th>Category</th>
+                            <th>Dollar Amount</th>
+                            <th>Funding Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mod in project.fundingsource_set %}
+                        <tr>
+                            <td>
+                                {{ mod.fiscal_year }}
+                            </td>
+                            <td>
+                                {{ mod.funding_source_category }}
+                            </td>
+                            <td>
+                                {{ mod.get_dollar_amount_display }}
+                            </td>
+                            <td>
+                                {{ mod.funding_status }}
+                            </td>
+                        {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </section>
         <section id="narrative" class="container px2 py4 overflow-hidden">
             <div class="column-12"><h4>Description</h4></div>

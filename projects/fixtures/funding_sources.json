@@ -1,48 +1,54 @@
 [{
-    "pk" : 31,
-    "model" : "projects.FundingSourceCategory",
+    "pk" : null,
+    "model" : "projects.Category",
     "fields" : {
-        "name" : "IT Investment Fund"
+        "name" : "IT Investment Fund",
+        "category_type": 1
     }
     
 },
 {
-    "pk" : 32,
-    "model" : "projects.FundingSourceCategory",
+    "pk" : null,
+    "model" : "projects.Category",
     "fields" : {
-        "name" : "Operational Budget"
+        "name" : "Operational Budget",
+        "category_type": 1
     }
     
 },
 {
-    "pk" : 33,
-    "model" : "projects.FundingSourceCategory",
+    "pk" : null,
+    "model" : "projects.Category",
     "fields" : {
-        "name" : "IT Strategy Fund"
+        "name" : "IT Strategy Fund",
+        "category_type": 1
     }
     
 },
 {
-    "pk" : 34,
-    "model" : "projects.FundingSourceCategory",
+    "pk" : null,
+    "model" : "projects.Category",
     "fields" : {
-        "name" : "Federal"
+        "name" : "Federal",
+        "category_type": 1
     }
     
 },
 {
-    "pk" : 35,
-    "model" : "projects.FundingSourceCategory",
+    "pk" : null,
+    "model" : "projects.Category",
     "fields" : {
-        "name" : "COPS"
+        "name" : "COPS",
+        "category_type": 1
     }
     
 },
 {
-    "pk" : 36,
-    "model" : "projects.FundingSourceCategory",
+    "pk" : null,
+    "model" : "projects.Category",
     "fields" : {
-        "name" : "Restricted Receipt"
+        "name" : "Restricted Receipt",
+        "category_type": 1
     }
     
 }

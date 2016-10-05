@@ -247,7 +247,8 @@ class FundingSource(models.Model):
         on_delete = models.CASCADE)
     
     funding_source_category = models.ForeignKey(
-        FundingSourceCategory,
+        Category,
+        limit_choices_to = {"category_type":1},
         on_delete = models.CASCADE,
         help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
         
