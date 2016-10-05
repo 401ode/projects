@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^', include('web.urls', namespace='web')),
     url(r'^', include('projects.urls', namespace='projects')),
     url(r'^admin/', admin.site.urls),
+    url(r'^markdownx/', include('markdownx.urls')),
 ]

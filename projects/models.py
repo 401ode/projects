@@ -1,7 +1,7 @@
 from functools import reduce
 from operator import or_
 from datetime import datetime
-
+from markdownx.models import MarkdownxField
 
 from django.db import models
 from django.db.models import Q
