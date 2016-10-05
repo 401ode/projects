@@ -3,19 +3,24 @@
 from __future__ import unicode_literals
 
 from django.db import migrations
-from projects.models import Category
+# from projects.models import Category
+
+def update_category_from_str_to_int(apps, schema_editor):
+    Category = apps.get_model("projects", "Category")
+    db_alias = schema_editor.connection.alias
+    categories = Category.objects.using(db_alias).all()
+    for category in categories:
+        if category.category_type == "Project":
+            category.category_type = 0
+    categories.save()
+
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('projects', '0023_auto_20161005_1025'),
+        # ('projects', '0023_auto_20161005_1025'),
     ]
 
     operations = [
-        # Get all category objects.
-        categories = Category.objects.all()
-        for cat in categories:
-            if cat.category_type == "Project":
-                cat.category_type = 0
-        categories.save()
+        migrations.RunPython(update_category_from_str_to_int()),
     ]
