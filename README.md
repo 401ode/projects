@@ -1,18 +1,17 @@
 [![Build Status](https://travis-ci.org/401ode/projects.svg?branch=master)](https://travis-ci.org/401ode/projects)
 ### ODE Projects Dashboard
 
-We have hundreds of repos and have released dozens of tools but they're hard to find unless you know where to look (or what you're looking for.)
+We are now creating a way to surface and discover the projects that ODE and ETSS work on. You will be able to easily find how each engagement and repo works, who works on it, and how to contact the team that created it.
 
-We are now creating a way to surface and discover the projects that 18F works on. You will be able to easily find how each engagement and repo works, who works on it, and how to contact the team that created it.
-
-This is an ongoing **work in progress!!!** Our [Wiki](https://github.com/18F/projects/wiki) contains research notes and drafts that you might find helpful if you're also thinking about discovery.
+This is an ongoing **work in progress!!!** 18F's [Wiki](https://github.com/18F/projects/wiki) contains research notes and drafts that you might find helpful if you're also thinking about discovery.
 
 #### Dependencies
 
-- Python 3.5.0
+- Python 3.5.0 - see [requirements.txt](/blob/master/requirements.txt) for all Python dependencies.
 - [Postgresql](http://www.postgresql.org/download/)
 - [Basscss (kinda)](http://www.basscss.com/)
 - [Skull (Basscss Theme)](http://www.basscss.com/skull/)
+- [Ionicons](http://ionicons.com/)
 
 #### Running Locally
 
@@ -27,9 +26,13 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
+#### Loading Data
+
 Fixtures containing possible State clients are included in: `projects/fixtures/ri-agencies.json`.
 
 Project categories are included in: `projects/fixtures/categories.json`. 
+
+Funding Source Categories are included in: `projects/fixtures/funding_sources.json`.
 
 To load them: 
 
