@@ -30,26 +30,30 @@
     </header>
     {% block content %}
     {% endblock %}
-  <footer class="py3 flex items-center center border rounded mxn2">
-    <div class="column-4 pxn2">
-      <p><a href="http://www.ri.gov"><img src="http://www.vets.ri.gov/assets/img/statecoabw-footer.png" title="RI Logo" alt="ri.gov"/></a></p>
-      <p>
-    <script type="text/javascript">
-			  now=new Date();
-			  year=now.getFullYear(); 
+  <footer class="py3 flex flex-column justify-center center border rounded">
+    <div class="pxn2">
+      <div class="block">
+        <a href="http://www.ri.gov"><img src="static/img/statecoabw-footer.png" title="RI Logo" alt="ri.gov"/></a>
+      </div>
+      <div class="block">
+        <script type="text/javascript">
+		  	  now=new Date();
+			    year=now.getFullYear(); 
 			 </script>&copy; 
-    <script type="text/javascript">
-        document.write(year);
-    </script> - Office of Digital Excellence<br />State of Rhode Island</p>
-    </div>
-    <div class="column-4 pxn2">
-      <p>An Official Rhode Island State Website <br />
-      </p>
-      
-    </div>
-    <div class="column-4 pxn2">
-      <p><span class="bold">Status:</span> Alpha</p>
-      <p><a href="https://github.com/401ode/projects"><i class="icon ion-social-github navy"></i></a></p>
+			 <script type="text/javascript">
+			   document.write(year);
+			 </script> - Office of Digital Excellence
+			 </div>
+      <div class="block">An Official Rhode Island State Website
+      </div>
+      <div class="block">
+        <span class="bold">Status:</span> Alpha
+      </div>
+      <div class="block">
+        <a href="https://github.com/401ode/projects">
+          <i class="icon ion-social-github navy"></i>
+        </a>
+      </div>
     </div>
   </footer>
 
