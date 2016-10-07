@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/401ode/projects.svg?branch=master)](https://travis-ci.org/401ode/projects)
+[![Build Status](https://travis-ci.org/401ode/projects.svg?branch=master)](https://travis-ci.org/401ode/projects) [![Code Issues](https://www.quantifiedcode.com/api/v1/project/0b2fd3572fb44990bb749c292762242c/badge.svg)](https://www.quantifiedcode.com/app/project/0b2fd3572fb44990bb749c292762242c)
+
 ### ODE Projects Dashboard
 
 We are now creating a way to surface and discover the projects that ODE and ETSS work on. You will be able to easily find how each engagement and repo works, who works on it, and how to contact the team that created it.

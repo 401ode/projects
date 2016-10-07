@@ -1,0 +1,7 @@
+languages:
+  Ruby: true
+  JavaScript: true
+  Python: true
+  PHP: true
+exclude_paths:
+- "docs/build/html/_static/*"
