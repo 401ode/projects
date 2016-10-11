@@ -1,0 +1,172 @@
+{% extends 'web/base.html' %}
+
+{% block title %} - {{project.name}} {% endblock title %}
+
+{% block content %}
+{% load project_extras %}
+<div class="clearfix mt0">
+        <section id="header-information">
+            <h1 id="project-name" class="inline block">{{ project.name }}</h1>
+            <div id="live-github-urls" class="h3">
+                  {% if project.live_site_url %}
+                      <a target="_blank" href="{{ project.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
+                  {% endif %}
+                  {% if project.github_url %}
+                      <a target="_blank" href="{{ project.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
+                  {% endif %}
+              </div>
+            {% if project.client %} 
+            <h3> Developed in partnership with <span class="bold underline">{{ project.client }}</span>.
+            </h3>
+            {% endif %}
+            <div id="tagline" class="h3">{{ project.tagline }}</div>
+            <div id="progress-bar">
+                <!-- Test Progress Completion Status 
+                <h4>Progress</h4>
+                <progress value="{{ project.get_project_completion_percentage  }}" max="100" class="progress navy">{{ project.get_project_completion_percentage }}</progress>
+                -->
+            </div>
+        </section>
+        
+        <section id="overview-data" class="container px2 py4 overflow-hidden">
+            <h2>Overview</h2>
+            
+            <div class="overflow-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Project Lead</th>
+                            <th>Cloud.gov Project?</th>
+                            <th>Projected/Actual Start Date</th>
+                            <th>Projected/Actual Go-Live Date</th>
+                            <th>Billable</th>
+                            <th>RIFANS Account Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ project.get_status_display }}
+                            </td>
+                            <td>
+                                {{ project.get_priority_display }}
+                            </td>
+                            <td>
+                                {{ project.project_lead }}
+                            </td>
+                            <td>
+                                {% if project.cloud_dot_gov == True %}
+                                   <i class="icon ion-checkmark-circled green"></i>
+                                {% else %}
+                                    <i class="icon ion-close-round red"></i>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <i class="icon ion-calendar p1"></i>{{ project.start_date }}
+                            </td>
+                            <td>
+                                <i class="icon ion-calendar p1"></i>{{ project.go_live_date }}
+                            </td>
+                            <td>
+                                {% if project.billable == True %}
+                                   <i class="icon ion-checkmark-circled green"></i>
+                                {% else %}
+                                    <i class="icon ion-close-round red"></i>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if project.rifans_number %}
+                                    {{ project.rifans_number }}
+                                {% else %}
+                                    None
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Level of Effort</h3>
+            <div class="overflow-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State Tech Staff Required</th>
+                            <th>State Agency Staff Required</th>
+                            <th>Contractor Staff Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ project.tech_effort }}
+                            </td>
+                            <td>
+                                {{ project.agency_effort }}
+                            </td>
+                            <td>
+                                {{ project.contractor_effort }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Funding Sources</h3>
+            <div class="overflow-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fiscal Year</th>
+                            <th>Category</th>
+                            <th>Dollar Amount</th>
+                            <th>Funding Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mod in project.fundingsource_set.all %}
+                        <tr>
+                            <td>
+                                {{ mod.fiscal_year }}
+                            </td>
+                            <td>
+                                {{ mod.funding_source_category }}
+                            </td>
+                            <td>
+                                {{ mod.dollar_amount|dollars }}
+                            </td>
+                            <td>
+                                {{ mod.get_funding_status_display }}
+                            </td>
+                        {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+        <section id="narrative" class="container px2 py4 overflow-hidden">
+            <div class="column-12"><h4>Description</h4></div>
+            <div class="column-12"><p>{{ project.description }}</p></div>
+            <div class="column-12"><h4>Impact</h4></div>
+            <div class="column-12"><p>{{ project.impact }}</p></div>
+            <div class="column-12"><h4>Blockers</h4></div>
+            <div class="column-12"><p>{{ project.blockers }}</p></div>
+            <div class="column-12"><h4>Categories</h4></div>
+            <div class="column-12">
+                <p>
+                {% if project.categories %}
+                    <ul>
+                        {% for category in project.categories.all %}
+                        <li>{{ category.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    None
+        
+                {% endif %}
+                </p>
+            </div>
+        </section>
+</div><!-- main content -->
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'web/base.html' %}
+
+{% block title %} - {{project.name}} {% endblock title %}
+
+{% block content %}
+
+
+<!-- To be updated for funding_sources -->
+<div class="flex flex-wrap mxn2 row">
+  {% for source in funding_sources %}
+    <div class="column-4 border-box p2" style="height:253px">
+      <div class="p2 bg-white border rounded">
+        <a class="h4 caps bold mb1 block black" href="{% url 'web:funding_source' source.pk %}">
+          <span class="right"><i class="icon ion-help-circled navy" alt="Click for more project information."></i></span>
+          {% if source.name|length > 30 %}
+            {{ source.name|slice:":35" }}...
+          {% else %}
+            {{ source.name }}
+          {% endif %} 
+        </a>
+        <div class="mb2">
+          {{ source.tagline }}
+        </div>
+        {% if source.client %}
+        <div class="h6 mb2">
+          Developed with <span class="bold underline">{{ source.client }}</span>
+        </div>
+        {% endif %}
+        <div class="h3">
+        {% if source.live_site_url %}
+            <a title="Live Site URL" target="_blank" href="{{ source.live_site_url }}" class="black"><i class="icon ion-share"></i></a>&nbsp;
+        {% endif %}
+        {% if source.github_url %}
+            <a title="GitHub Repo URL" target="_blank" href="{{ source.github_url }}" class="black"><i class="icon ion-code-working"></i></a>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+
+{% endblock content %}
