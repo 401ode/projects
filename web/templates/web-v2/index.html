@@ -1,0 +1,38 @@
+{% extends 'web-v2/base.html' %} {% block title %} - Projects Dashboard {% endblock title %}
+{% block content %}
+{% for p in projects %}
+<div class="mdl-cell mdl-card mdl-shadow--4dp mdl-cell--4-col">
+    {% if p.client_logo %}
+    <div class="mdl-card__media">
+        <img class="article-image" src=" ../images/example-work01.jpg" border="0" alt="">
+    </div>
+    {% endif %}
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">
+            {% if p.name|length > 30 %}
+                {{ p.name|slice:":35" }}...
+            {% else %}
+                {{ p.name }}
+            {% endif %} 
+        </h2>
+    </div>
+    <div class="mdl-card__subtitle-text">
+        {{ p.tagline }}
+    </div>
+    {% if p.live_site_url %}
+    <div class="">
+        <a title="Live Site URL" target="_blank" href="{{ p.live_site_url }}"></a>
+    </div>
+    {% endif %}
+    {% if p.github_url %}
+            <a title="GitHub Repo URL" target="_blank" href="{{ p.github_url }}"><i class="icon ion-code-working"></i></a>
+    {% endif %}
+    
+    
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'web:project' p.pk %}">Read more</a>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock content %}

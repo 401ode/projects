@@ -6,4 +6,4 @@ from projects.models import Project
 class ProjectView(DetailView):
     context_object_name = 'project'
     model = Project
-    template_name = 'web/project.html'
+    template_name = 'web-v2/project.html'
