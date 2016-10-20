@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/401ode/projects.svg?branch=master)](https://travis-ci.org/401ode/projects) [![Code Issues](https://www.quantifiedcode.com/api/v1/project/0b2fd3572fb44990bb749c292762242c/badge.svg)](https://www.quantifiedcode.com/app/project/0b2fd3572fb44990bb749c292762242c)[![Requirements Status](https://requires.io/github/401ode/dashboard/requirements.svg?branch=staging)](https://requires.io/github/401ode/dashboard/requirements/?branch=staging)
+[![Build Status](https://travis-ci.org/401ode/projects.svg?branch=master)](https://travis-ci.org/401ode/projects) [![Code Issues](https://www.quantifiedcode.com/api/v1/project/0b2fd3572fb44990bb749c292762242c/badge.svg)](https://www.quantifiedcode.com/app/project/0b2fd3572fb44990bb749c292762242c)[![Requirements Status](https://requires.io/github/401ode/projects/requirements.svg?branch=master)](https://requires.io/github/401ode/projects/requirements/?branch=master)
 
 ### ODE Projects Dashboard
 
