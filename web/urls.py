@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.http import HttpRequest
-from web.views.home import HomeView
-from web.views.project import ProjectView, projects
+from .views.home import HomeView
+from .views.project import ProjectView, projects
 
 
 urlpatterns = [

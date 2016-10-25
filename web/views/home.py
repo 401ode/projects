@@ -1,7 +1,8 @@
 from django.views.generic import ListView
-
+from django.views.generic.detail import DetailView
 from projects.models import Project
-
+from projects.tables import ProjectsTable
+from django.shortcuts import render
 
 class HomeView(ListView):
     context_object_name = 'projects'
@@ -42,3 +43,12 @@ class HomeView(ListView):
             'query': q,
             'total': self.get_queryset().count(),
         }
+
+class ProjectView(DetailView):
+    context_object_name = 'project'
+    model = Project
+    template_name = 'web/project.html'
+    
+def projects(request):
+    table = ProjectsTable(Project.objects.all())
+    return render(request, 'web/project_list.html', {'projects': table})
