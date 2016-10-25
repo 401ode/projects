@@ -1,6 +1,7 @@
 from django.views.generic.detail import DetailView
 from django.shortcuts import render
 from projects.models import Project
+from projects.tables import ProjectsTable
 
 
 class ProjectView(DetailView):
@@ -9,4 +10,5 @@ class ProjectView(DetailView):
     template_name = 'web/project.html'
 
 def projects(request):
-    return render(request, 'web/project_list.html', {'projects': Project.objects.all()})
+    table = ProjectsTable(Project.objects.all())
+    return render(request, 'web/project_list.html', {'table': table})
