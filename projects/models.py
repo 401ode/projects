@@ -167,18 +167,32 @@ class Project(ModelBase):
     )
     # End Level of Effort Section
     # Timeline Section
-    start_date = models.DateField(
-        help_text = "The estimated or actual project start date.",
-        verbose_name = "Project Start Date",
-        blank=True,
-        null=True
-    )
-    go_live_date = models.DateField(
-        help_text = "The estimated or actual project go-live date.",
-        verbose_name = "Project Go-Live Date",
-        blank=True,
-        null=True
-    )
+    # Deprecated fields: shifting to FiscalYear object as start date/finish date.
+    # start_date = models.DateField(
+    #     help_text = "The estimated or actual project start date.",
+    #     verbose_name = "Project Start Date",
+    #     blank=True,
+    #     null=True
+    # )
+    # go_live_date = models.DateField(
+    #     help_text = "The estimated or actual project go-live date.",
+    #     verbose_name = "Project Go-Live Date",
+    #     blank=True,
+    #     null=True
+    # )
+    start_fy = models.ForeignKey(
+        FiscalYear,
+        help_text = "The estimated or actual project starting Fiscal Year.",
+        verbose_name = "Project Start",
+        null=True,
+        )
+    completion_fy = models.ForeignKey(
+        FiscalYear,
+        help_text = "The estimated or actual project completion Fiscal Year.",
+        verbose_name = "Project Completion",
+        null=True,
+        )
+    
     # End Timeline Section
     blockers = models.TextField(
         help_text='What stands in the way of this project? Markdown is allowed.',
