@@ -11,4 +11,4 @@ class ProjectView(DetailView):
 
 def projects(request):
     table = ProjectsTable(Project.objects.all())
-    return render(request, 'web/project_list.html', {'table': table})
+    return render(request, 'web/project_list.html', {'projects': table})
