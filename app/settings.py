@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'test_without_migrations',
     'django_tables2',
     'projects',
-    'web',
+    'webfront',
 ]
 
 MIDDLEWARE_CLASSES = [
