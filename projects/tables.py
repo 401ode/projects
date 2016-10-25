@@ -1,7 +1,10 @@
 import django_tables2 as tables
 from .models import Project, FiscalYear
+from django_tables2.utils import A
+# from webfront.views import project
 
 class ProjectsTable(tables.Table):
+    name = tables.LinkColumn('webfront.views.project.ProjectView', args=[A('pk')])
     class Meta:
         model = Project
         fields = (
