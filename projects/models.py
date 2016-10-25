@@ -118,7 +118,8 @@ class Project(ModelBase):
         Client,
         help_text='The client of the project, if any.',
         blank=True,
-        null=True
+        null=True,
+        on_delete = models.CASCADE
     )
     project_lead = models.CharField(
         help_text='Name of ETSS/ODE employee who is responsible for this'
@@ -222,7 +223,8 @@ class Project(ModelBase):
         default=None,
         blank=True,
         null=True,
-        verbose_name='Business Unit'
+        verbose_name='Business Unit',
+        on_delete = models.CASCADE
     )
     categories = models.ManyToManyField(
         Category,

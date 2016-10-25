@@ -8,7 +8,7 @@ class ClientAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
         user = self.request.user
 
-        if not (user.is_authenticated() and user.is_staff):
+        if not (user.is_authenticated and user.is_staff):
             return Client.objects.none()
 
         qs = Client.objects.all()
