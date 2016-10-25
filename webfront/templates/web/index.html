@@ -11,7 +11,7 @@
   {% for p in projects %}
     <div class="column-4 border-box p2" style="height:253px">
       <div class="p2 bg-white border rounded">
-        <a class="h4 caps bold mb1 block black" href="{% url 'web:project' p.pk %}">
+        <a class="h4 caps bold mb1 block black" href="{% url 'webfront:project' p.pk %}">
           <span class="right"><i class="icon ion-help-circled navy" alt="Click for more project information."></i></span>
           {% if p.name|length > 30 %}
             {{ p.name|slice:":35" }}...
