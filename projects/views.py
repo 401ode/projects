@@ -1,7 +1,7 @@
 from django.db.models import Q
-from dal import autocomplete
 
-from .models import Client
+from dal import autocomplete
+from .models import Client, Project, FiscalYear
 
 
 class ClientAutocomplete(autocomplete.Select2QuerySetView):
@@ -20,3 +20,4 @@ class ClientAutocomplete(autocomplete.Select2QuerySetView):
             )
 
         return qs
+
