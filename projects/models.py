@@ -167,18 +167,36 @@ class Project(ModelBase):
     )
     # End Level of Effort Section
     # Timeline Section
-    start_date = models.DateField(
-        help_text = "The estimated or actual project start date.",
-        verbose_name = "Project Start Date",
-        blank=True,
-        null=True
-    )
-    go_live_date = models.DateField(
-        help_text = "The estimated or actual project go-live date.",
-        verbose_name = "Project Go-Live Date",
-        blank=True,
-        null=True
-    )
+    # Deprecated fields: shifting to FiscalYear object as start date/finish date.
+    # start_date = models.DateField(
+    #     help_text = "The estimated or actual project start date.",
+    #     verbose_name = "Project Start Date",
+    #     blank=True,
+    #     null=True
+    # )
+    # go_live_date = models.DateField(
+    #     help_text = "The estimated or actual project go-live date.",
+    #     verbose_name = "Project Go-Live Date",
+    #     blank=True,
+    #     null=True
+    # )
+    start_fy = models.ForeignKey(
+        FiscalYear,
+        help_text = "The estimated or actual project starting Fiscal Year.",
+        verbose_name = "Project Start",
+        related_name = "projects_starting_in_this_fy",
+        null=True,
+        on_delete = models.CASCADE,
+        )
+    completion_fy = models.ForeignKey(
+        FiscalYear,
+        help_text = "The estimated or actual project completion Fiscal Year.",
+        verbose_name = "Project Completion",
+        related_name = "projects_complete_in_this_fy",
+        null=True,
+        on_delete = models.CASCADE
+        )
+    
     # End Timeline Section
     blockers = models.TextField(
         help_text='What stands in the way of this project? Markdown is allowed.',
@@ -242,17 +260,6 @@ class Project(ModelBase):
 
     class Meta:
         ordering = ['priority','client','name']
-        
-    def get_project_completion_percentage(self):
-        if self.start_date == self.go_live_date:
-            return 100
-        elif self.start_date and self.go_live_date:
-            today = datetime.today().date()
-            total_days = (self.go_live_date - self.start_date).days
-            remaining_days = (self.go_live_date - today).days
-            return (remaining_days / total_days) * 100
-        else:
-            return 0
     
     
     def __str__(self):

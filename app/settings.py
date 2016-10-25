@@ -19,9 +19,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'test_without_migrations',
-
+    'django_tables2',
     'projects',
-    'web',
+    'webfront',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -48,6 +48,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
