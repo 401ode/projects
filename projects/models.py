@@ -316,7 +316,7 @@ class Project(ModelBase):
         default=False,
         verbose_name='Is visible (in dashboard)?'
     )
-    contact = models.ForeignKey(
+    contacts = models.ManyToManyField(
         Contact,
         help_text="Primary Contact for this project."
     )
