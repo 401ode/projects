@@ -54,6 +54,30 @@ class Client(ModelBase):
     def __str__(self):
         return '{} - {}'.format(self.department, self.agency)
 
+class Contact(ModelBase):
+    """
+    A class to define attributes of project contacts (AIMs, PMs, Directors,
+    etc.)
+    """
+    first_name = models.CharField(
+        max_length=80,
+        help_text="Contact First Name."
+    )
+    last_name = models.CharField(
+        max_length=80,
+        help_text="Contact Last Name."
+    )
+    title = models.CharField(
+        max_length=100,
+        help_text="Contact's Title",
+    )
+    # TODO: Add Department when that's a full object.
+    email_address = models.EmailField(
+        help_text="Contact's E-Mail address @ri.gov, unless an exception."
+    )
+
+    class Meta:
+        verbose_name_plural = "Contacts"
 
 class BusinessUnit(ModelBase):
     """
@@ -292,7 +316,10 @@ class Project(ModelBase):
         default=False,
         verbose_name='Is visible (in dashboard)?'
     )
-
+    contact = models.ForeignKey(
+        Contact,
+        help_text="Primary Contact for this project."
+    )
     objects = ProjectManager()
 
     class Meta:
@@ -350,28 +377,3 @@ class FundingSource(ModelBase):
             self.project,
             self.funding_source_category,
             self.dollar_amount)
-
-class Contact(ModelBase):
-    """
-    A class to define attributes of project contacts (AIMs, PMs, Directors,
-    etc.)
-    """
-    first_name = models.CharField(
-        max_length=80,
-        help_text="Contact First Name."
-    )
-    last_name = models.CharField(
-        max_length=80,
-        help_text="Contact Last Name."
-    )
-    title = models.CharField(
-        max_length=100,
-        help_text="Contact's Title",
-    )
-    # TODO: Add Department when that's a full object.
-    email_address = models.EmailField(
-        help_text="Contact's E-Mail address @ri.gov, unless an exception."
-    )
-
-    class Meta:
-        verbose_name_plural = "Contacts"
