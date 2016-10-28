@@ -36,8 +36,8 @@ class BlockerInline(admin.TabularInline):
     Present inline editing ability for Blockers.
     """
     model = Blocker
-    extra = 2
-    
+    extra = 1
+
 class NoteInline(admin.TabularInline):
     """
     Present inline editing ability for Notes.

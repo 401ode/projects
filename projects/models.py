@@ -394,7 +394,7 @@ class Blocker(ModelBase):
     )
     blocker_description = models.TextField(
         max_length=250,
-         help_text="Add as many blockers as are necessary to describe what" \
+        help_text="Add as many blockers as are necessary to describe what" \
         "is preventing this project from moving forward. Don't worry" \
         "about category accuracy - this is for general guidance, not" \
         "reporting."
@@ -403,12 +403,12 @@ class Blocker(ModelBase):
 class Note(ModelBase):
     """
     For adding multiple notes, with a category, about a given project, along
-    with controls for visibility. 
+    with controls for visibility.
     """
-    note_project=models.ForeignKey(
+    note_project = models.ForeignKey(
         Project,
     )
-    note_category=models.ForeignKey(
+    note_category = models.ForeignKey(
         Category,
         limit_choices_to={'category_type':3},
         help_text="Category for this note."
@@ -416,4 +416,11 @@ class Note(ModelBase):
     note_text = models.TextField(
         max_length=500,
         help_text="What should we know about this project?"
+    )
+    archived = models.BooleanField(
+        help_text="This note has been archived. Or not."
+    )
+    admin_only = models.BooleanField(
+        help_text="This note has been flagged to be visible only to "\
+        "adminstrators."
     )
