@@ -119,7 +119,8 @@ class Category(ModelBase):
     category_type = models.PositiveIntegerField(
         choices=[
             (0, "Project"),
-            (1, "Funding Source")
+            (1, "Funding Source"),
+            (2, "Blocker")
             ],
         default=0)
 
@@ -262,10 +263,6 @@ class Project(ModelBase):
         )
 
     # End Timeline Section
-    blockers = models.TextField(
-        help_text='What stands in the way of this project?',
-        blank=True
-    )
     live_site_url = models.URLField(
         help_text='A URL to the site where the project is deployed, '
                   'if one exists.',
@@ -310,6 +307,7 @@ class Project(ModelBase):
     )
     categories = models.ManyToManyField(
         Category,
+        limit_choices_to={'category_type':0},
         help_text="Which categories does this project fall into?"
     )
     is_visible = models.BooleanField(
@@ -380,3 +378,23 @@ class FundingSource(ModelBase):
             self.project,
             self.funding_source_category,
             self.dollar_amount)
+
+class Blocker(ModelBase):
+    """
+    Breaking out Blockers into a separate object, as we may have
+    more than one, and potentially in different categories.
+    """
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE)
+    blocker_category = models.ForeignKey(
+        Category,
+        limit_choices_to={'category_type':2}
+    )
+    blocker_description = models.TextField(
+        max_length=250,
+         help_text="Add as many blockers as are necessary to describe what" \
+        "is preventing this project from moving forward. Don't worry" \
+        "about category accuracy - this is for general guidance, not" \
+        "reporting."
+    )
