@@ -141,6 +141,7 @@ class Project(ModelBase):
     Uber object. Most complicated. Most fields. Maybe could
     use some simplification, but whatever.
     """
+    
     name = models.CharField(
         max_length=100,
         help_text='The full name of the project (e.g., "UHIP")'
@@ -158,9 +159,8 @@ class Project(ModelBase):
     # Added per issue #30 from @theryankelly
     project_id = models.IntegerField(
         help_text="The DoIT/ODE assigned Project ID.", # Eventually auto-gen.
-        unique=True,  # No two projects can have the same ID.
         blank=False, # We'll see how this goes in practice.
-        default=new_suggested_project_id(),
+        default=0,
     )
     client = models.ForeignKey(
         Client,
@@ -294,9 +294,6 @@ class Project(ModelBase):
     )
 
     objects = ProjectManager()
-    
-    def new_suggested_project_id(self):
-        return Project.objects.all().aggregate(Max('project_id')) + 1
 
     class Meta:
         ordering = ['priority', 'client', 'name']
