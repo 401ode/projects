@@ -9,9 +9,8 @@ related objects.
 from functools import reduce
 from operator import or_
 from django.db import models
-from django.db.models import Q
+from django.db.models import Q, Max
 from .templatetags import project_extras
-
 
 class ModelBase(models.Model):
     """
@@ -161,6 +160,7 @@ class Project(ModelBase):
         help_text="The DoIT/ODE assigned Project ID.", # Eventually auto-gen.
         unique=True,  # No two projects can have the same ID.
         blank=False, # We'll see how this goes in practice.
+        default=new_suggested_project_id(),
     )
     client = models.ForeignKey(
         Client,
@@ -294,6 +294,9 @@ class Project(ModelBase):
     )
 
     objects = ProjectManager()
+    
+    def new_suggested_project_id(self):
+        return Project.objects.all().aggregate(Max('project_id')) + 1
 
     class Meta:
         ordering = ['priority', 'client', 'name']
