@@ -28,7 +28,7 @@ class Client(models.Model):
         blank=True
     )
     omb_agency_code = models.CharField(
-        help_text='OMB Agency Code is the code id for the agency described here.',
+        help_text='The OMB code id for the agency described here.',
         max_length=255,
         blank=True,
         verbose_name='OMB Agency Code'
@@ -43,9 +43,9 @@ class Client(models.Model):
 
 class BusinessUnit(models.Model):
     name = models.CharField(max_length=100)
-    class Meta: 
+    class Meta:
         verbose_name_plural = "Business Units"
-    
+
     def __str__(self):
         return self.name
 
@@ -55,30 +55,30 @@ class FiscalYear(models.Model):
     end_date = models.DateField()
     class Meta:
         verbose_name_plural = "Fiscal Years"
-    
+
     def __str__(self):
         return self.name
-    
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
     category_type = models.PositiveIntegerField(
-        choices = [
-            (0,"Project"), (1,"Funding Source")
+        choices=[
+            (0, "Project"), (1, "Funding Source")
             ],
         default=0)
-    
-    class Meta: 
+
+    class Meta:
         verbose_name_plural = "Categories"
-    
+
     def __str__(self):
         return self.name
 
 
 class FundingSourceCategory(Category):
-    class Meta: 
+    class Meta:
         verbose_name_plural = "Funding Source Categories"
-    
+
     def __str__(self):
         return self.name
 
@@ -114,12 +114,19 @@ class Project(ModelBase):
         help_text='The tagline of the project; short and concise.',
         blank=True
     )
+    # Added per issue #30 from @theryankelly
+    project_id = models.IntegerField(
+        max_length=5, # Therefore accommodates up to 10,000 projects.
+        help_text="The DoIT/ODE assigned Project ID.", # Eventually auto-gen.
+        unique=True,  # No two projects can have the same ID.
+        blank=False, # We'll see how this goes in practice.
+    )
     client = models.ForeignKey(
         Client,
         help_text='The client of the project, if any.',
         blank=True,
         null=True,
-        on_delete = models.CASCADE
+        on_delete=models.CASCADE
     )
     project_lead = models.CharField(
         help_text='Name of ETSS/ODE employee who is responsible for this'
@@ -145,56 +152,45 @@ class Project(ModelBase):
     priority = models.IntegerField(
         help_text='Official designated priority of the project.',
         choices=[
-            (0, 'Designated Strategic Imperative'), (1, 'Critical'), (2, 'High'), (3, 'Medium'), (4, 'Low')
+            (0, 'Designated Strategic Imperative'),
+            (1, 'Critical'),
+            (2, 'High'),
+            (3, 'Medium'),
+            (4, 'Low')
         ],
         default=3
     )
     # Level of Effort Section 
     tech_effort = models.PositiveIntegerField(
-        help_text = "Estimate of technical staff necessary for the project.",
-        verbose_name = "Tech Staff Level of Effort",
+        help_text="Estimate of technical staff necessary for the project.",
+        verbose_name="Tech Staff Level of Effort",
         default=0
     )
     agency_effort = models.PositiveIntegerField(
-        help_text = "Estimate of Agency staff necessary for the project.",
-        verbose_name = "Agency Staff Level of Effort",
+        help_text="Estimate of Agency staff necessary for the project.",
+        verbose_name="Agency Staff Level of Effort",
         default=0
     )
     contractor_effort = models.PositiveIntegerField(
-        help_text = "Estimate of contractor staff necessary for the project.",
-        verbose_name = "Contractor Staff Level of Effort",
+        help_text="Estimate of contractor staff necessary for the project.",
+        verbose_name="Contractor Staff Level of Effort",
         default=0
     )
-    # End Level of Effort Section
-    # Timeline Section
-    # Deprecated fields: shifting to FiscalYear object as start date/finish date.
-    # start_date = models.DateField(
-    #     help_text = "The estimated or actual project start date.",
-    #     verbose_name = "Project Start Date",
-    #     blank=True,
-    #     null=True
-    # )
-    # go_live_date = models.DateField(
-    #     help_text = "The estimated or actual project go-live date.",
-    #     verbose_name = "Project Go-Live Date",
-    #     blank=True,
-    #     null=True
-    # )
     start_fy = models.ForeignKey(
         FiscalYear,
-        help_text = "The estimated or actual project starting Fiscal Year.",
-        verbose_name = "Project Start",
-        related_name = "projects_starting_in_this_fy",
+        help_text="The estimated or actual project starting Fiscal Year.",
+        verbose_name="Project Start",
+        related_name="projects_starting_in_this_fy",
         null=True,
-        on_delete = models.CASCADE,
+        on_delete=models.CASCADE,
         )
     completion_fy = models.ForeignKey(
         FiscalYear,
-        help_text = "The estimated or actual project completion Fiscal Year.",
-        verbose_name = "Project Completion",
-        related_name = "projects_complete_in_this_fy",
+        help_text="The estimated or actual project completion Fiscal Year.",
+        verbose_name="Project Completion",
+        related_name="projects_complete_in_this_fy",
         null=True,
-        on_delete = models.CASCADE
+        on_delete=models.CASCADE
         )
     
     # End Timeline Section
