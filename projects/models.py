@@ -16,7 +16,7 @@ from .templatetags import project_extras
 class ModelBase(models.Model):
     """
     Base class for Models. Not really used? I inherited this from the
-    18F project.
+    18F project. Could be useful, actually. 
     """
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -25,7 +25,7 @@ class ModelBase(models.Model):
         abstract = True
 
 
-class Client(models.Model):
+class Client(ModelBase):
     """
     Currently a hybrid listing of department/agency, but soon to be
     broken out into separate objects for departments, divisions,
@@ -56,7 +56,7 @@ class Client(models.Model):
         return '{} - {}'.format(self.department, self.agency)
 
 
-class BusinessUnit(models.Model):
+class BusinessUnit(ModelBase):
     """
     Inherited from 18F project. Minimal usage to our projects, but perhaps
     should be utilized more often, i.e. "Networking" or "Web Services" or
@@ -70,7 +70,7 @@ class BusinessUnit(models.Model):
     def __str__(self):
         return self.name
 
-class FiscalYear(models.Model):
+class FiscalYear(ModelBase):
     """
     The model for the Fiscal Year(s) in which projects take place.
     """
@@ -84,7 +84,7 @@ class FiscalYear(models.Model):
         return self.name
 
 
-class Category(models.Model):
+class Category(ModelBase):
     """
     Flexible category object. Can be applied to projects and 
     funding sources at present. Adaptable to take on other values.
@@ -302,7 +302,7 @@ class Project(ModelBase):
     def __str__(self):
         return self.name
 
-class FundingSource(models.Model):
+class FundingSource(ModelBase):
     """
     Basic class establishing links between projects, amounts,
     and fiscal years.
@@ -351,3 +351,31 @@ class FundingSource(models.Model):
             self.project,
             self.funding_source_category,
             self.dollar_amount)
+
+class Contact(ModelBase):
+    """
+    A class to define attributes of project contacts (AIMs, PMs, Directors,
+    etc.)
+    """
+    first_name = models.CharField(
+        max_length=80,
+        help_text="Contact First Name."
+    )
+    last_name = models.CharField(
+        max_length=80,
+        help_text="Contact Last Name."
+    )
+    title = models.CharField(
+        max_length=100,
+        help_text="Contact's Title",
+    )
+    # TODO: Add Department when that's a full object.
+    email_address = models.EmailField(
+        help_text="Contact's E-Mail address @ri.gov, unless an exception."
+    )
+    
+    
+    
+    
+    class Meta:
+        verbose_name_plural = "Contacts"
