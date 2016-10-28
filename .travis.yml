@@ -1,17 +1,16 @@
 language: python
 python:
-  - 3.5.2
+- 3.5.2
 services:
-  - postgresql
+- postgresql
 env:
-  - TRAVIS_NODE_VERSION="4.4"
+- TRAVIS_NODE_VERSION="4.4"
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 before_script:
-  - npm i -g http-server phantomjs pa11y pa11y-reporter-ci
+- npm i -g http-server phantomjs pa11y pa11y-reporter-ci
 script:
-  # - pylint --rcfile=.pylintrc
-  # - nohup http-server -p 8080 >/dev/null 2>&1 &
-  # - nohup python manage.py runserver >/dev/null 2>&1 &
-  # - pa11y localhost -r ci -s WCAG2AAA
-  - python manage.py test --nomigrations
+- python manage.py test --nomigrations
+notifications:
+  slack:
+    secure: srrXXcXjhuXnEseaKKdS0MK1s7siiXjHUl/OiUF7AVEhYI2MVfCLxwU5ZfV6W7RN1I2QYd4W4eMggD7h2ZqFzgJWG4NWZUQrW5nT9zbZSyWFxAuxMUB4fD/Ej4zcktO9cG5GiUQQhlZ9AH30PYX+grrSNI+rcClZ2cACVPwsQ/sgXnfoT1UnvsV2YcZ6UXriIWOUIH0eiYGQWHnL8CE2pquz2YsBBKJAo9ucG2Oud/hhXj7zUrXfCXg7sQ37ISCeyMgzbgBzKgHevuv7Yehvp6splhKfVtr3yIp7pds9uZ/2MsyaH6PKq2Iq3O1uKHdHai1CFW4oYXgxT6Hq3vvpCIGUat2xPoFrCrErEYPkoPEBTZh6q5J+s1UTgQSYz9Q1ID5FsJ4qYBa5XDPasySWrDfqB9JLQLdaz5nsKcPXQ1Bgg8/Y6/uV9NXG9JqC+Hq99Bmw25RNSkK7I/JfElPk2Q8JpXTZgp30yTfoJy0uIDqwrx7fvzNHXYc0+vLGKdsIlF7GN5OfUtMUkR70BJXcTc2HkhC+U4x0R9HbzlbsiI07ZoiR/f7LQgWWjOATRMDtE8lXco52PE+qPvBcIi4cyiDp+4MWRXPZncBR+FY5xxKJVj23LOgUOwOUOnUdw2BUQ0YLswt/WqRje36GM9ZxB0+9jUE6/4ZGoe3lD7jkong=

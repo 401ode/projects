@@ -1,14 +1,22 @@
+"""
+Main definitions of Projects model and
+related objects.
+
+"""
+
+
+
 from functools import reduce
 from operator import or_
-from datetime import datetime
-
-
 from django.db import models
-from django.db.models import Q
-
+from django.db.models import Q, Max
 from .templatetags import project_extras
 
 class ModelBase(models.Model):
+    """
+    Base class for Models. Not really used? I inherited this from the
+    18F project. Could be useful, actually.
+    """
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -16,7 +24,13 @@ class ModelBase(models.Model):
         abstract = True
 
 
-class Client(models.Model):
+class Client(ModelBase):
+    """
+    Currently a hybrid listing of department/agency, but soon to be
+    broken out into separate objects for departments, divisions,
+    offices.
+    """
+
     department = models.CharField(
         help_text='Department is the highest organizational level.',
         max_length=255,
@@ -28,7 +42,7 @@ class Client(models.Model):
         blank=True
     )
     omb_agency_code = models.CharField(
-        help_text='OMB Agency Code is the code id for the agency described here.',
+        help_text='The OMB code id for the agency described here.',
         max_length=255,
         blank=True,
         verbose_name='OMB Agency Code'
@@ -40,50 +54,97 @@ class Client(models.Model):
     def __str__(self):
         return '{} - {}'.format(self.department, self.agency)
 
+class Contact(ModelBase):
+    """
+    A class to define attributes of project contacts (AIMs, PMs, Directors,
+    etc.)
+    """
+    first_name = models.CharField(
+        max_length=80,
+        help_text="Contact First Name."
+    )
+    last_name = models.CharField(
+        max_length=80,
+        help_text="Contact Last Name."
+    )
+    title = models.CharField(
+        max_length=100,
+        help_text="Contact's Title",
+    )
+    # TODO: Add Department when that's a full object.
+    email_address = models.EmailField(
+        help_text="Contact's E-Mail address @ri.gov, unless an exception."
+    )
 
-class BusinessUnit(models.Model):
+    class Meta:
+        verbose_name_plural = "Contacts"
+
+class BusinessUnit(ModelBase):
+    """
+    Inherited from 18F project. Minimal usage to our projects, but perhaps
+    should be utilized more often, i.e. "Networking" or "Web Services" or
+    "Security" business units, etc.
+    """
+
     name = models.CharField(max_length=100)
-    class Meta: 
+    class Meta:
         verbose_name_plural = "Business Units"
-    
+
     def __str__(self):
         return self.name
 
-class FiscalYear(models.Model):
+class FiscalYear(ModelBase):
+    """
+    The model for the Fiscal Year(s) in which projects take place.
+    """
     name = models.CharField(max_length=10)
     start_date = models.DateField()
     end_date = models.DateField()
     class Meta:
         verbose_name_plural = "Fiscal Years"
-    
+
     def __str__(self):
         return self.name
-    
 
-class Category(models.Model):
+
+class Category(ModelBase):
+    """
+    Flexible category object. Can be applied to projects and
+    funding sources at present. Adaptable to take on other values.
+    """
     name = models.CharField(max_length=100)
     category_type = models.PositiveIntegerField(
-        choices = [
-            (0,"Project"), (1,"Funding Source")
+        choices=[
+            (0, "Project"),
+            (1, "Funding Source")
             ],
         default=0)
-    
-    class Meta: 
+
+    class Meta:
         verbose_name_plural = "Categories"
-    
+
     def __str__(self):
         return self.name
 
 
 class FundingSourceCategory(Category):
-    class Meta: 
+    """
+    To be deprecated. Moved into "Category" object
+    functionality.
+    """
+    class Meta:
         verbose_name_plural = "Funding Source Categories"
-    
+
     def __str__(self):
         return self.name
 
 
 class ProjectManager(models.Manager):
+    """
+    Some code related to searching for projects.
+    Admitted deficiency in my Django knowledge is how object
+    managers work.
+    """
     def search(self, terms):
         qs = self.get_queryset()
         terms = [term.strip() for term in terms.split()]
@@ -100,6 +161,11 @@ class ProjectManager(models.Manager):
 
 
 class Project(ModelBase):
+    """
+    Uber object. Most complicated. Most fields. Maybe could
+    use some simplification, but whatever.
+    """
+    
     name = models.CharField(
         max_length=100,
         help_text='The full name of the project (e.g., "UHIP")'
@@ -114,12 +180,18 @@ class Project(ModelBase):
         help_text='The tagline of the project; short and concise.',
         blank=True
     )
+    # Added per issue #30 from @theryankelly
+    project_id = models.IntegerField(
+        help_text="The DoIT/ODE assigned Project ID.", # Eventually auto-gen.
+        blank=False, # We'll see how this goes in practice.
+        default=0,
+    )
     client = models.ForeignKey(
         Client,
         help_text='The client of the project, if any.',
         blank=True,
         null=True,
-        on_delete = models.CASCADE
+        on_delete=models.CASCADE
     )
     project_lead = models.CharField(
         help_text='Name of ETSS/ODE employee who is responsible for this'
@@ -145,61 +217,50 @@ class Project(ModelBase):
     priority = models.IntegerField(
         help_text='Official designated priority of the project.',
         choices=[
-            (0, 'Designated Strategic Imperative'), (1, 'Critical'), (2, 'High'), (3, 'Medium'), (4, 'Low')
+            (0, 'Designated Strategic Imperative'),
+            (1, 'Critical'),
+            (2, 'High'),
+            (3, 'Medium'),
+            (4, 'Low')
         ],
         default=3
     )
-    # Level of Effort Section 
+    # Level of Effort Section
     tech_effort = models.PositiveIntegerField(
-        help_text = "Estimate of technical staff necessary for the project.",
-        verbose_name = "Tech Staff Level of Effort",
+        help_text="Estimate of technical staff necessary for the project.",
+        verbose_name="Tech Staff Level of Effort",
         default=0
     )
     agency_effort = models.PositiveIntegerField(
-        help_text = "Estimate of Agency staff necessary for the project.",
-        verbose_name = "Agency Staff Level of Effort",
+        help_text="Estimate of Agency staff necessary for the project.",
+        verbose_name="Agency Staff Level of Effort",
         default=0
     )
     contractor_effort = models.PositiveIntegerField(
-        help_text = "Estimate of contractor staff necessary for the project.",
-        verbose_name = "Contractor Staff Level of Effort",
+        help_text="Estimate of contractor staff necessary for the project.",
+        verbose_name="Contractor Staff Level of Effort",
         default=0
     )
-    # End Level of Effort Section
-    # Timeline Section
-    # Deprecated fields: shifting to FiscalYear object as start date/finish date.
-    # start_date = models.DateField(
-    #     help_text = "The estimated or actual project start date.",
-    #     verbose_name = "Project Start Date",
-    #     blank=True,
-    #     null=True
-    # )
-    # go_live_date = models.DateField(
-    #     help_text = "The estimated or actual project go-live date.",
-    #     verbose_name = "Project Go-Live Date",
-    #     blank=True,
-    #     null=True
-    # )
     start_fy = models.ForeignKey(
         FiscalYear,
-        help_text = "The estimated or actual project starting Fiscal Year.",
-        verbose_name = "Project Start",
-        related_name = "projects_starting_in_this_fy",
+        help_text="The estimated or actual project starting Fiscal Year.",
+        verbose_name="Project Start",
+        related_name="projects_starting_in_this_fy",
         null=True,
-        on_delete = models.CASCADE,
+        on_delete=models.CASCADE,
         )
     completion_fy = models.ForeignKey(
         FiscalYear,
-        help_text = "The estimated or actual project completion Fiscal Year.",
-        verbose_name = "Project Completion",
-        related_name = "projects_complete_in_this_fy",
+        help_text="The estimated or actual project completion Fiscal Year.",
+        verbose_name="Project Completion",
+        related_name="projects_complete_in_this_fy",
         null=True,
-        on_delete = models.CASCADE
+        on_delete=models.CASCADE
         )
-    
+
     # End Timeline Section
     blockers = models.TextField(
-        help_text='What stands in the way of this project? Markdown is allowed.',
+        help_text='What stands in the way of this project?',
         blank=True
     )
     live_site_url = models.URLField(
@@ -214,7 +275,7 @@ class Project(ModelBase):
         blank=True,
         verbose_name='GitHub URL'
     )
-    
+
     is_billable = models.BooleanField(
         help_text='Whether or not the project is chargeable to a'
         ' non-ODE/ETSS client.',
@@ -242,11 +303,11 @@ class Project(ModelBase):
         blank=True,
         null=True,
         verbose_name='Business Unit',
-        on_delete = models.CASCADE
+        on_delete=models.CASCADE
     )
     categories = models.ManyToManyField(
         Category,
-        help_text = "Which categories does this project fall into?"
+        help_text="Which categories does this project fall into?"
     )
     is_visible = models.BooleanField(
         help_text='Projects with a primary private repos should'
@@ -255,52 +316,64 @@ class Project(ModelBase):
         default=False,
         verbose_name='Is visible (in dashboard)?'
     )
-
+    contacts = models.ManyToManyField(
+        Contact,
+        help_text="Primary Contact for this project."
+    )
     objects = ProjectManager()
 
     class Meta:
-        ordering = ['priority','client','name']
-    
-    
+        ordering = ['priority', 'client', 'name']
+
     def __str__(self):
         return self.name
 
-class FundingSource(models.Model):
+class FundingSource(ModelBase):
+    """
+    Basic class establishing links between projects, amounts,
+    and fiscal years.
+    """
     project = models.ForeignKey(
         Project,
-        on_delete = models.CASCADE)
-    
+        on_delete=models.CASCADE)
+
     funding_source_category = models.ForeignKey(
         Category,
-        limit_choices_to = {"category_type":1},
-        on_delete = models.CASCADE,
-        help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
-        
+        limit_choices_to={"category_type":1},
+        on_delete=models.CASCADE,
+        help_text="The category (ITIF, Operational Budget, etc." \
+        "of this funding source.")
+
     dollar_amount = models.DecimalField(
-        help_text = "The amount budgeted for this funding source.",
+        help_text="The amount budgeted for this funding source.",
         decimal_places=2,
         max_digits=11,
         default=0.00)
-        
+
     fiscal_year = models.ForeignKey(
         FiscalYear,
-        on_delete = models.CASCADE,
+        on_delete=models.CASCADE,
         null=True)
-        
+
     funding_status = models.PositiveIntegerField(
-        help_text = "Overall approval status for this funding source.",
-        choices = [
-            (0,"Proposed"), (1, "Approved"), (2, "Denied")
+        help_text="Overall approval status for this funding source.",
+        choices=[
+            (0, "Proposed"),
+            (1, "Approved"),
+            (2, "Denied")
             ],
-        default = 0,
+        default=0,
         )
-        
+
     def dollar_amount_display(self):
         return project_extras.prepend_dollars(self.dollar_amount)
-    
+
     class Meta:
-        unique_together = ('project', 'funding_source_category','fiscal_year')
+        unique_together = ('project', 'funding_source_category', 'fiscal_year')
         verbose_name_plural = "Funding Sources"
-        
+
     def __str__(self):
-        return "{} - {} - {}".format(self.project, self.funding_source_category, self.dollar_amount)
+        return "{} - {} - {}".format(
+            self.project,
+            self.funding_source_category,
+            self.dollar_amount)
