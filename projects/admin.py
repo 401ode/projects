@@ -7,7 +7,8 @@ from .models import (
     Category, 
     FundingSource,
     FundingSourceCategory,
-    FiscalYear
+    FiscalYear,
+    Contact
     )
 from .forms import ProjectForm, CategoryForm
 
@@ -66,3 +67,17 @@ class FundingSourceAdmin(admin.ModelAdmin):
     # project_client.admin_order_field = "project__client"
     list_display = ('project', 'fiscal_year', 'funding_source_category', 'dollar_amount', 'funding_status')
     list_filter = ('project', 'funding_source_category', 'funding_status')
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    """
+    For maintaining project contacts.
+    """
+    list_display = ('first_name',
+                    'last_name',
+                    'title',
+                    'email_address')
+    list_filter = ('first_name',
+                    'last_name',
+                    'title',
+                    'email_address')
