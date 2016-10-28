@@ -1,14 +1,23 @@
+"""
+Main definitions of Projects model and
+related objects.
+
+"""
+
+
+
 from functools import reduce
 from operator import or_
-from datetime import datetime
-
-
 from django.db import models
 from django.db.models import Q
-
 from .templatetags import project_extras
 
+
 class ModelBase(models.Model):
+    """
+    Base class for Models. Not really used? I inherited this from the
+    18F project.
+    """
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -17,6 +26,12 @@ class ModelBase(models.Model):
 
 
 class Client(models.Model):
+    """
+    Currently a hybrid listing of department/agency, but soon to be
+    broken out into separate objects for departments, divisions,
+    offices.
+    """
+    
     department = models.CharField(
         help_text='Department is the highest organizational level.',
         max_length=255,
@@ -42,6 +57,12 @@ class Client(models.Model):
 
 
 class BusinessUnit(models.Model):
+    """
+    Inherited from 18F project. Minimal usage to our projects, but perhaps
+    should be utilized more often, i.e. "Networking" or "Web Services" or
+    "Security" business units, etc. 
+    """
+    
     name = models.CharField(max_length=100)
     class Meta:
         verbose_name_plural = "Business Units"
@@ -50,6 +71,9 @@ class BusinessUnit(models.Model):
         return self.name
 
 class FiscalYear(models.Model):
+    """
+    The model for the Fiscal Year(s) in which projects take place.
+    """
     name = models.CharField(max_length=10)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -61,10 +85,15 @@ class FiscalYear(models.Model):
 
 
 class Category(models.Model):
+    """
+    Flexible category object. Can be applied to projects and 
+    funding sources at present. Adaptable to take on other values.
+    """
     name = models.CharField(max_length=100)
     category_type = models.PositiveIntegerField(
         choices=[
-            (0, "Project"), (1, "Funding Source")
+            (0, "Project"),
+            (1, "Funding Source")
             ],
         default=0)
 
@@ -76,6 +105,10 @@ class Category(models.Model):
 
 
 class FundingSourceCategory(Category):
+    """
+    To be deprecated. Moved into "Category" object
+    functionality.
+    """
     class Meta:
         verbose_name_plural = "Funding Source Categories"
 
@@ -84,6 +117,11 @@ class FundingSourceCategory(Category):
 
 
 class ProjectManager(models.Manager):
+    """
+    Some code related to searching for projects.
+    Admitted deficiency in my Django knowledge is how object 
+    managers work.
+    """
     def search(self, terms):
         qs = self.get_queryset()
         terms = [term.strip() for term in terms.split()]
@@ -100,6 +138,10 @@ class ProjectManager(models.Manager):
 
 
 class Project(ModelBase):
+    """
+    Uber object. Most complicated. Most fields. Maybe could
+    use some simplification, but whatever.
+    """
     name = models.CharField(
         max_length=100,
         help_text='The full name of the project (e.g., "UHIP")'
@@ -160,7 +202,7 @@ class Project(ModelBase):
         ],
         default=3
     )
-    # Level of Effort Section 
+    # Level of Effort Section
     tech_effort = models.PositiveIntegerField(
         help_text="Estimate of technical staff necessary for the project.",
         verbose_name="Tech Staff Level of Effort",
@@ -192,10 +234,10 @@ class Project(ModelBase):
         null=True,
         on_delete=models.CASCADE
         )
-    
+
     # End Timeline Section
     blockers = models.TextField(
-        help_text='What stands in the way of this project? Markdown is allowed.',
+        help_text='What stands in the way of this project?',
         blank=True
     )
     live_site_url = models.URLField(
@@ -210,7 +252,7 @@ class Project(ModelBase):
         blank=True,
         verbose_name='GitHub URL'
     )
-    
+
     is_billable = models.BooleanField(
         help_text='Whether or not the project is chargeable to a'
         ' non-ODE/ETSS client.',
@@ -238,11 +280,11 @@ class Project(ModelBase):
         blank=True,
         null=True,
         verbose_name='Business Unit',
-        on_delete = models.CASCADE
+        on_delete=models.CASCADE
     )
     categories = models.ManyToManyField(
         Category,
-        help_text = "Which categories does this project fall into?"
+        help_text="Which categories does this project fall into?"
     )
     is_visible = models.BooleanField(
         help_text='Projects with a primary private repos should'
@@ -255,48 +297,57 @@ class Project(ModelBase):
     objects = ProjectManager()
 
     class Meta:
-        ordering = ['priority','client','name']
-    
-    
+        ordering = ['priority', 'client', 'name']
+
     def __str__(self):
         return self.name
 
 class FundingSource(models.Model):
+    """
+    Basic class establishing links between projects, amounts,
+    and fiscal years.
+    """
     project = models.ForeignKey(
         Project,
-        on_delete = models.CASCADE)
-    
+        on_delete=models.CASCADE)
+
     funding_source_category = models.ForeignKey(
         Category,
-        limit_choices_to = {"category_type":1},
-        on_delete = models.CASCADE,
-        help_text = "The category (ITIF, Operational Budget, etc. of this funding source.")
-        
+        limit_choices_to={"category_type":1},
+        on_delete=models.CASCADE,
+        help_text="The category (ITIF, Operational Budget, etc." \
+        "of this funding source.")
+
     dollar_amount = models.DecimalField(
-        help_text = "The amount budgeted for this funding source.",
+        help_text="The amount budgeted for this funding source.",
         decimal_places=2,
         max_digits=11,
         default=0.00)
-        
+
     fiscal_year = models.ForeignKey(
         FiscalYear,
-        on_delete = models.CASCADE,
+        on_delete=models.CASCADE,
         null=True)
-        
+
     funding_status = models.PositiveIntegerField(
-        help_text = "Overall approval status for this funding source.",
-        choices = [
-            (0,"Proposed"), (1, "Approved"), (2, "Denied")
+        help_text="Overall approval status for this funding source.",
+        choices=[
+            (0, "Proposed"),
+            (1, "Approved"),
+            (2, "Denied")
             ],
-        default = 0,
+        default=0,
         )
-        
+
     def dollar_amount_display(self):
         return project_extras.prepend_dollars(self.dollar_amount)
-    
+
     class Meta:
-        unique_together = ('project', 'funding_source_category','fiscal_year')
+        unique_together = ('project', 'funding_source_category', 'fiscal_year')
         verbose_name_plural = "Funding Sources"
-        
+
     def __str__(self):
-        return "{} - {} - {}".format(self.project, self.funding_source_category, self.dollar_amount)
+        return "{} - {} - {}".format(
+            self.project,
+            self.funding_source_category,
+            self.dollar_amount)
