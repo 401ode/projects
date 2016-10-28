@@ -16,11 +16,13 @@ from .models import (
     Category,
     FundingSource,
     FiscalYear,
-    Contact
+    Contact,
+    Blocker,
+    Note
     )
 from .forms import ProjectForm, CategoryForm
 
-admin.site.site_header = 'Project Dashboard Administration'
+admin.site.site_header = 'RIODE Project Dashboard Administration'
 
 class FundingSourceInline(admin.TabularInline):
     """
@@ -29,6 +31,19 @@ class FundingSourceInline(admin.TabularInline):
     model = FundingSource
     extra = 3
 
+class BlockerInline(admin.TabularInline):
+    """
+    Present inline editing ability for Blockers.
+    """
+    model = Blocker
+    extra = 1
+
+class NoteInline(admin.TabularInline):
+    """
+    Present inline editing ability for Notes.
+    """
+    model = Note
+    extra = 2
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
@@ -51,14 +66,17 @@ class BusinessUnitAdmin(admin.ModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     """
-    For maintaining Projects. Includes the FundingSourceInline.
+    For maintaining Projects. Includes the FundingSourceInline,
+    BlockerInline, NoteInline editing tools.
     """
     form = ProjectForm
     list_display = ('name', 'status', 'client')
     list_filter = ('status', 'is_billable', 'cloud_dot_gov', 'is_visible')
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
-    inlines = [FundingSourceInline]
+    inlines = [FundingSourceInline,
+               BlockerInline,
+               NoteInline]
 
 
 @admin.register(Category)
