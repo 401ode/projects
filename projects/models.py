@@ -76,6 +76,9 @@ class Contact(ModelBase):
         help_text="Contact's E-Mail address @ri.gov, unless an exception."
     )
 
+    def __str__(self):
+        return "{},{} - {}".format(self.last_name, self.first_name, self.title)
+
     class Meta:
         verbose_name_plural = "Contacts"
 
@@ -165,7 +168,7 @@ class Project(ModelBase):
     Uber object. Most complicated. Most fields. Maybe could
     use some simplification, but whatever.
     """
-    
+
     name = models.CharField(
         max_length=100,
         help_text='The full name of the project (e.g., "UHIP")'
