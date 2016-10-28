@@ -158,7 +158,6 @@ class Project(ModelBase):
     )
     # Added per issue #30 from @theryankelly
     project_id = models.IntegerField(
-        max_length=5, # Therefore accommodates up to 10,000 projects.
         help_text="The DoIT/ODE assigned Project ID.", # Eventually auto-gen.
         unique=True,  # No two projects can have the same ID.
         blank=False, # We'll see how this goes in practice.
