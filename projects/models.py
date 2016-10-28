@@ -418,9 +418,11 @@ class Note(ModelBase):
         help_text="What should we know about this project?"
     )
     archived = models.BooleanField(
+        default=False,
         help_text="This note has been archived. Or not."
     )
     admin_only = models.BooleanField(
+        default=False,
         help_text="This note has been flagged to be visible only to "\
         "adminstrators."
     )
