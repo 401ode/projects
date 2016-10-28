@@ -120,7 +120,8 @@ class Category(ModelBase):
         choices=[
             (0, "Project"),
             (1, "Funding Source"),
-            (2, "Blocker")
+            (2, "Blocker"),
+            (3, "Note")
             ],
         default=0)
 
@@ -397,4 +398,22 @@ class Blocker(ModelBase):
         "is preventing this project from moving forward. Don't worry" \
         "about category accuracy - this is for general guidance, not" \
         "reporting."
+    )
+
+class Note(ModelBase):
+    """
+    For adding multiple notes, with a category, about a given project, along
+    with controls for visibility. 
+    """
+    note_project=models.ForeignKey(
+        Project,
+    )
+    note_category=models.ForeignKey(
+        Category,
+        limit_choices_to={'category_type':3},
+        help_text="Category for this note."
+    )
+    note_text = models.TextField(
+        max_length=500,
+        help_text="What should we know about this project?"
     )
