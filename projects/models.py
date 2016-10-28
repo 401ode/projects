@@ -16,7 +16,7 @@ from .templatetags import project_extras
 class ModelBase(models.Model):
     """
     Base class for Models. Not really used? I inherited this from the
-    18F project. Could be useful, actually. 
+    18F project. Could be useful, actually.
     """
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -31,7 +31,7 @@ class Client(ModelBase):
     broken out into separate objects for departments, divisions,
     offices.
     """
-    
+
     department = models.CharField(
         help_text='Department is the highest organizational level.',
         max_length=255,
@@ -60,9 +60,9 @@ class BusinessUnit(ModelBase):
     """
     Inherited from 18F project. Minimal usage to our projects, but perhaps
     should be utilized more often, i.e. "Networking" or "Web Services" or
-    "Security" business units, etc. 
+    "Security" business units, etc.
     """
-    
+
     name = models.CharField(max_length=100)
     class Meta:
         verbose_name_plural = "Business Units"
@@ -86,7 +86,7 @@ class FiscalYear(ModelBase):
 
 class Category(ModelBase):
     """
-    Flexible category object. Can be applied to projects and 
+    Flexible category object. Can be applied to projects and
     funding sources at present. Adaptable to take on other values.
     """
     name = models.CharField(max_length=100)
@@ -119,7 +119,7 @@ class FundingSourceCategory(Category):
 class ProjectManager(models.Manager):
     """
     Some code related to searching for projects.
-    Admitted deficiency in my Django knowledge is how object 
+    Admitted deficiency in my Django knowledge is how object
     managers work.
     """
     def search(self, terms):
@@ -373,9 +373,6 @@ class Contact(ModelBase):
     email_address = models.EmailField(
         help_text="Contact's E-Mail address @ri.gov, unless an exception."
     )
-    
-    
-    
-    
+
     class Meta:
         verbose_name_plural = "Contacts"
