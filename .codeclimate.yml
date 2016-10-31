@@ -5,3 +5,4 @@ languages:
   PHP: true
 exclude_paths:
 - "docs/build/html/_static/*"
+- "projects/migrations"
